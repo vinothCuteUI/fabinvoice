@@ -1,0 +1,143 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ======= Container fluid ======= */
+.container-fluid{
+  width: 100% !important;
+  padding: 0 15px;;
+}
+
+/* ======== align ======= */
+.text-center{
+  text-align: center !important;
+}
+.text-left{
+  text-align: left !important;
+}
+.text-right{
+  text-align: right !important;
+}
+.text-justify{
+  text-align: justify !important;
+}
+.d-block{
+  display: block !important;
+}
+.d-inline-block{
+  display: inline-block !important;
+}
+.d-flex{
+  display: flex !important;
+}
+.d-none{
+  display: none !important;
+}
+.w-100{
+  width: 100% !important;
+}
+
+/*========= Flex align ======== */
+.justify-content-center{
+  justify-content: center !important;
+}
+.justify-content-start{
+  justify-content: flex-start !important;
+}
+.justify-content-end{
+  justify-content: flex-end !important;
+}
+.justify-content-around{
+  justify-content: space-around !important;
+}
+.justify-content-between{
+  justify-content: space-between !important;
+}
+.justify-content-evenly{
+  justify-content: space-evenly !important;
+}
+
+.align-items-stretch{
+  align-items: stretch !important;
+}
+.align-items-start{
+  align-items: flex-start !important;
+}
+.align-items-end{
+  align-items: flex-end !important;
+}
+.align-items-center{
+  align-items: center !important;
+}
+.align-items-baseline{
+  align-items: baseline !important;
+}
+
+
+.p-0{
+  padding: 0px !important;
+}
+.p-t-0{
+  padding-top: 0px !important;
+}
+.p-r-0{
+  padding-right: 0px !important;
+}
+.p-b-0{
+  padding-bottom: 0px !important;
+}
+.p-l-0{
+  padding-left: 0px !important;
+}
+
+
+
+.b-0{
+  border:none !important;
+}
+.b-t-0{
+  border-top: 0px !important;
+}
+.b-r-0{
+  border-right: 0px !important;
+}
+.b-b-0{
+  border-bottom: 0px !important;
+}
+.b-l-0{
+  border-left: 0px !important;
+}
+
+
+/* ====== colors ====== */
+.bg-light{
+  background-color: rgb(241 242 244);
+}
+
+.text-bold{
+  font-weight: bold;
+}
+
+/* ==== Hide Input number arrow tailwind === */
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

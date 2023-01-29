@@ -1,0 +1,52 @@
+.inovicesection{
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.6 );
+    height: 100vh;
+    overflow-y: auto;
+    padding: 20px 20px 60px;
+    box-sizing:border-box
+}
+
+.pdfDownload{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding:10px;
+    text-align:center
+}
+.pdfBtn{
+    border: 0 ;
+    box-shadow: none;
+    border-radius: 5px ;
+    background-color: #000 ;
+    color:white;
+    font-size: 14px ;
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+.pdfBtn:hover{
+    opacity: 0.95;
+}
+.cancelBtn{
+    border: 0 ;
+    box-shadow: none;
+    border-radius: 5px ;
+    background-color: #607d8b ;
+    color:white;
+    font-size: 14px ;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.cancelBtn:hover{
+    opacity: 0.95;
+}

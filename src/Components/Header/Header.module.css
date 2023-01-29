@@ -1,0 +1,27 @@
+.header-top{
+    background-color: #fff;
+    box-shadow: 0 0 5px #ccc;
+    padding: 10px 0;
+}
+.header-logo{
+    width: 45%;
+}
+a.logo{
+    display: inline-block;
+    text-decoration: none;
+}
+a.logo > img{
+    width: 150px;
+}
+.top_btn{
+    text-align: right;
+}
+
+.logout_btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 10px 15px; 
+    border-radius: 5px;
+}

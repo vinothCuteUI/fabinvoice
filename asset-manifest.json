@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fabinvoice/static/css/main.bce7dad0.css",
-    "main.js": "/fabinvoice/static/js/main.d856fd3b.js",
+    "main.css": "/fabinvoice/static/css/main.81293924.css",
+    "main.js": "/fabinvoice/static/js/main.fb89074f.js",
     "static/js/498.da229744.chunk.js": "/fabinvoice/static/js/498.da229744.chunk.js",
     "static/js/703.aec6759c.chunk.js": "/fabinvoice/static/js/703.aec6759c.chunk.js",
     "static/js/560.ab2f7f81.chunk.js": "/fabinvoice/static/js/560.ab2f7f81.chunk.js",
@@ -9,15 +9,15 @@
     "static/media/invoice-logo.png": "/fabinvoice/static/media/invoice-logo.e4c8a040104a69669a70.png",
     "static/media/fabevy-logo-landscape.png": "/fabinvoice/static/media/fabevy-logo-landscape.b8c7c0b68b62e0c9c23b.png",
     "index.html": "/fabinvoice/index.html",
-    "main.bce7dad0.css.map": "/fabinvoice/static/css/main.bce7dad0.css.map",
-    "main.d856fd3b.js.map": "/fabinvoice/static/js/main.d856fd3b.js.map",
+    "main.81293924.css.map": "/fabinvoice/static/css/main.81293924.css.map",
+    "main.fb89074f.js.map": "/fabinvoice/static/js/main.fb89074f.js.map",
     "498.da229744.chunk.js.map": "/fabinvoice/static/js/498.da229744.chunk.js.map",
     "703.aec6759c.chunk.js.map": "/fabinvoice/static/js/703.aec6759c.chunk.js.map",
     "560.ab2f7f81.chunk.js.map": "/fabinvoice/static/js/560.ab2f7f81.chunk.js.map",
     "787.71c8cd4b.chunk.js.map": "/fabinvoice/static/js/787.71c8cd4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bce7dad0.css",
-    "static/js/main.d856fd3b.js"
+    "static/css/main.81293924.css",
+    "static/js/main.fb89074f.js"
   ]
 }

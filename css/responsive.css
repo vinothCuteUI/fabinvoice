@@ -1,0 +1,122 @@
+@media (max-width: 576px){
+    .navs{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+    .home{
+        padding-top: 120px;
+    }
+	.abt_rt_img img{
+		width: 100%;
+	}
+	.achiev_boxs .achiev_list .achiev_num{
+        margin-bottom: 0px;
+        
+     }
+    .achiev_boxs .achiev_list .achiev_num:after{
+        width: 33px;
+
+    }
+    .achiev_boxs .achiev_list .achiev_num{
+        position: relative;
+    }
+    .achiev_boxs .achiev_list .achiev_num:after{
+        
+    }
+    .achiev_boxs .achiev_list{
+        margin-bottom: 30px;
+        justify-content: left;
+    }
+    .map_section{
+    	height: 500px;
+    	margin-bottom: 30px;
+    }
+    .page_text_para p > img{
+        width: 100%;
+        margin: 0 0 20px 0;
+
+    }
+    .page_text_para p .demo-img{
+        width: 100%;
+        margin: 0 0 20px 0; 
+    }
+
+}
+
+/* @media (max-width: 992px){
+    .testimonials_img{
+        text-align: right;
+    }
+    .page_text_para p .demo-img{
+        width: 100%;
+        margin: 0 0 20px 0; 
+    }
+    .testimonials_img img{
+        right: 6%;
+        width: 20%;
+        margin-top: 20px;
+    }
+   
+    .testimonials_img:after{
+        content: "";
+        position:absolute;
+        right: 0%;
+        bottom: -10%;
+        width: 18%;
+        height: 80%;
+        background: rgba(85, 85, 85, 0.5098039215686274);
+    }
+    .testmonial_part .carousel-inner .carousel-item{
+        padding: 70px 0; 
+        height: 620px;
+    }
+    .testimonials_info h4{
+        font-size: 20px;
+    }
+    .testmonial_section .carousel-control-next span i{
+        margin-left: 10px;
+    }
+     .testmonial_section .carousel-control-prev span i{
+        margin-left:-8px;
+    }
+    .testmonial_section .carousel-control-next{
+        left: 22%;
+    }
+    .right-title h2{
+        font-size: 26px;
+    }
+    .right-title span{
+        left: auto;
+        right: 0;
+        font-size: 40px;
+    }
+    .faq_img{
+        margin-bottom: 30px;
+    }
+    .faq_sect:after{
+        display: none;
+    }
+}
+@media (min-width: 768px){
+    .mobile-menu{
+        width: 40%;
+        right: -42%;
+    }
+}
+@media (min-width:992px) and (max-width: 1200px){
+    .right-title span{
+        font-size: 50px;
+        left: auto;
+        right: 0;
+    }
+}
+@media (min-width:992px){
+	.icos {
+	    justify-content: flex-end;
+	}
+
+} */
+

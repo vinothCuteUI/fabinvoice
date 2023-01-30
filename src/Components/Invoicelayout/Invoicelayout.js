@@ -40,7 +40,7 @@ const Invoicelayout = (props)=>{
         setcgstAmt(getcgst);
         setsgstAmt(getsgst);
         // console.log(setInvoiceContext.item);
-    }, [setInvoiceContext.totalAmt]);
+    }, [setInvoiceContext.totalAmt, setInvoiceContext.subTotal, setInvoiceContext.cgst, setInvoiceContext.sgst]);
 
 
 

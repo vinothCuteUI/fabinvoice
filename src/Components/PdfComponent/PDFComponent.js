@@ -42,8 +42,8 @@ const PDFComponent = (props) => {
             </div>
             
             <div className={classes.pdfDownload}>
-                <button className={classes.pdfBtn} onClick={handleGeneratePdf}>Download PDF</button>
-                <button className={classes.cancelBtn} onClick={cancelPdf}>Close</button>
+				<button className={classes.cancelBtn} onClick={cancelPdf}>x</button>
+                <button className={classes.pdfBtn} onClick={handleGeneratePdf}><i className="fa fa-download" ></i></button>
             </div>
 
         </section>

@@ -29,7 +29,7 @@ const PDFlayout = (props)=>{
         const esdd = (getTextInvoice.item.estDate).split('-').reverse().join("-");
         setEsDate(esdd);
         // console.log(getTextInvoice.item);
-    }, [getTextInvoice.totalAmt]);
+    }, [getTextInvoice.item.estDate, getTextInvoice.totalAmt, getTextInvoice.subTotal, getTextInvoice.cgst, getTextInvoice.sgst]);
 
     const setStyles = {
         row:{
@@ -391,7 +391,8 @@ const PDFlayout = (props)=>{
             alignItems:"flex-start",
             borderWidth: '0 1px 1px 1px',
             borderStyle: 'solid',
-            borderColor: '#ccc'
+            borderColor: '#ccc',
+            minHeight:'500px'
         },
         billmathamout:{
             borderWidth: '0px 0px 1px 1px',
@@ -661,7 +662,7 @@ const PDFlayout = (props)=>{
                             <b>Total</b>
                         </div>
                         <div style={setStyles.col6}>
-                            <b>{totalAmt}.00</b>
+                            <b>&#8377;{totalAmt}.00</b>
                         </div>
                     </div>
 

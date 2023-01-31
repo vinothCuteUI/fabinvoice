@@ -24,6 +24,25 @@ table{
 .estimate-col:first-child{
     border-right:solid 1px #ccc;
 }
+
+.estGroup{
+    display: flex;
+}
+.estGroup span{
+    height: 36px;
+    background: #f5f5f5;
+    border: solid 1px #ccc;
+    border-radius: 5px 0px 0px 5px;
+    padding: 0px 8px;
+    border-right: 0;
+    line-height: 36px;
+    font-size: 15px;
+}
+.estGroup input{
+    border-radius: 0px 5px 5px 0px;
+}
+
+
 .bill-to-tab{
     border-width: 0px 1px 1px 1px;
     border-style: solid;

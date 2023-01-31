@@ -122,7 +122,8 @@ const Invoicelayout = (props)=>{
                             <div className={`${flexclasses["col-md-6"]}`}>
                                 <span>#</span>
                             </div>
-                            <div className={`${flexclasses["col-md-6"]}`}>
+                            <div className={`${flexclasses["col-md-6"]} ${classes.estGroup}` }>
+                                <span>EST</span>
                                 <input type="number" name="ESTID" className={formclasses["input-controls"]} placeholder="Ex: 00014" 
                                 value={inputEST.value} onChange={onInputHandler} onBlur={ontouchHandler} />
                             </div>

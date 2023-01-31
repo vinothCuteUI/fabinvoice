@@ -39,76 +39,80 @@ const PDFlayout = (props)=>{
         },
         col:{
             flex: '1 0 0%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col1:{
             flex:'0 0 auto',
             width: '8.33%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col2:{
             flex:'0 0 auto',
             width: '16.66%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col3:{
             flex:'0 0 auto',
             width: '25%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col4:{
             flex:'0 0 auto',
-            width: '33.33%'
+            width: '33.33%',
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col5:{
             flex:'0 0 auto',
             width: '41.66%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col6:{
             flex:'0 0 auto',
             width: '50%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col7:{
             flex:'0 0 auto',
-            width: '58.33%'
+            width: '58.33%',
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col8:{
             flex:'0 0 auto',
             width: '66.66%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col9:{
             flex:'0 0 auto',
             width: '75%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col10:{
             flex:'0 0 auto',
             width: '83.33%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col11:{
             flex:'0 0 auto',
             width: '91.66%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         col12:{
             flex:'0 0 auto',
             width: '100%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         img100:{
             width:'100%',
@@ -157,8 +161,8 @@ const PDFlayout = (props)=>{
         },
         logo:{
             width:'22%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         hTitle:{
             fontSize: '30px',
@@ -201,8 +205,8 @@ const PDFlayout = (props)=>{
         billtotitle:{
             paddingTop: '8px',
             paddingBottom: '8px',
-            paddingLeft:'15px',
-            paddingRight:'15px',
+            paddingLeft:'10px',
+            paddingRight:'10px',
             borderBottom: 'solid 1px #ccc',
             fontWeight: 'bold',
             backgroundColor:'#f5f5f5',
@@ -211,8 +215,8 @@ const PDFlayout = (props)=>{
         billtocontent:{
             paddingTop: '10px',
             paddingBottom: '10px',
-            paddingLeft:'15px',
-            paddingRight:'15px',
+            paddingLeft:'10px',
+            paddingRight:'10px',
             fontSize:'16px'
         },
         billitemrow:{
@@ -233,8 +237,8 @@ const PDFlayout = (props)=>{
             borderColor: '#ccc',
             paddingTop: '8px',
             paddingBottom: '8px',
-            paddingLeft:'15px',
-            paddingRight:'15px',
+            paddingLeft:'10px',
+            paddingRight:'10px',
             flex:'1 0 auto',
             display: 'flex',
             flexWrap: 'wrap',
@@ -249,8 +253,8 @@ const PDFlayout = (props)=>{
             borderColor: '#ccc',
             paddingTop: '8px',
             paddingBottom: '8px',
-            paddingLeft:'15px',
-            paddingRight:'15px',
+            paddingLeft:'10px',
+            paddingRight:'10px',
             flex:'1 0 auto',
             display: 'flex',
             flexWrap: 'wrap',
@@ -264,8 +268,8 @@ const PDFlayout = (props)=>{
             borderColor: '#ccc',
             paddingTop: '8px',
             paddingBottom: '8px',
-            paddingLeft:'15px',
-            paddingRight:'15px',
+            paddingLeft:'10px',
+            paddingRight:'10px',
             flex:'1 0 auto',
             display: 'flex',
             flexWrap: 'wrap',
@@ -296,8 +300,8 @@ const PDFlayout = (props)=>{
             borderColor: '#ccc',
             paddingTop: '8px',
             paddingBottom: '8px',
-            paddingLeft:'15px',
-            paddingRight:'15px',
+            paddingLeft:'10px',
+            paddingRight:'10px',
             flex:'1 0 auto',
             display: 'flex',
             flexWrap: 'wrap',
@@ -350,8 +354,8 @@ const PDFlayout = (props)=>{
         },
         billgsttitle:{
             width:"100%",
-            paddingLeft: '15px',
-            paddingRight: '15px',
+            paddingLeft: '10px',
+            paddingRight: '10px',
             paddingBottom: '10px',
             paddingTop:'8px',
             textAlign:'center'
@@ -417,8 +421,8 @@ const PDFlayout = (props)=>{
             borderColor: '#ccc',
             paddingTop: '8px',
             paddingBottom: '8px',
-            paddingLeft:'15px',
-            paddingRight:'15px',
+            paddingLeft:'10px',
+            paddingRight:'10px',
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'flex-end',
@@ -435,8 +439,8 @@ const PDFlayout = (props)=>{
         
         billtextamout:{
             flex:'1 0 0%',
-            paddingLeft:'15px',
-            paddingRight:'15px'
+            paddingLeft:'10px',
+            paddingRight:'10px'
         },
         txtTotal:{
             paddingTop: '20px',

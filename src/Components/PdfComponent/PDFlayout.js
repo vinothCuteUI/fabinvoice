@@ -280,15 +280,15 @@ const PDFlayout = (props)=>{
             borderColor: '#ccc',
             paddingTop: '8px',
             paddingBottom: '8px',
-            paddingLeft:'15px',
-            paddingRight:'15px',
+            paddingLeft:'10px',
+            paddingRight:'10px',
             flex:'1 0 auto',
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'flex-end',
             alignItems: 'flex-end',
             color: '#000',
-            width:'45px'
+            width:'60px'
         },
         billitemrate:{
             borderWidth: '0px 0px 1px 1px',

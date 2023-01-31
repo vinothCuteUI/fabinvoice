@@ -9,19 +9,16 @@ import Invoicelayout from "../Invoicelayout/Invoicelayout";
 
 const Createinvoice = (props) => {
     return(
-        <div >
+        <>
             <Header />
-            <Container className={`container-fluid`}>
+            <Container className={`container-fluid`} >
                 <Flexbox>
-                    <div className={`${flexclass["col-md-12"]}`}>
+                    <div style={{marginTop:'55px'}}>
                         <Invoicelayout />
-                    </div>
-                    <div className={`${flexclass['col-md-4']} `} style={{display:"none"}}>
-                        <Createinvoiceform />                        
                     </div>
                 </Flexbox>
             </Container>
-        </div>
+        </>
     )
 }
 

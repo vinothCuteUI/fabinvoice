@@ -2,6 +2,11 @@
     background-color: #fff;
     box-shadow: 0 0 5px #ccc;
     padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
 }
 .header-logo{
     width: 45%;

@@ -393,7 +393,7 @@ const PDFlayout = (props)=>{
             borderWidth: '0 1px 1px 1px',
             borderStyle: 'solid',
             borderColor: '#ccc',
-            minHeight:'500px'
+            minHeight:'600px'
         },
         billmathamout:{
             borderWidth: '0px 0px 1px 1px',

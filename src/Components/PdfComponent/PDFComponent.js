@@ -15,7 +15,7 @@ const PDFComponent = (props) => {
 		});
 
 		// Adding the fonts.
-		doc.setFont('Inter-Regular', 'normal');
+		doc.setFont('Arial, sans-serif');
 
 		doc.html(reportTemplateRef.current, {
 			

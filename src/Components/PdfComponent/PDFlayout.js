@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import invoicelogo from "../../assets/images/invoice-logo.png";
+import rupeesymbol from '../../assets/images/rupee-symbol.png';
 import Createtextinvoce from "../Data-store/CreateText-invoice";
 import { Convertnumberstr } from "../Validation/ConvertNumberStr";
 
@@ -662,7 +663,7 @@ const PDFlayout = (props)=>{
                             <b>Total</b>
                         </div>
                         <div style={setStyles.col6}>
-                            <b>&#8377;{totalAmt}.00</b>
+                            <b><img src={rupeesymbol} style={{width:'7.5px', height:'auto'}} />{totalAmt}.00</b>
                         </div>
                     </div>
 

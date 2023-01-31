@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fabinvoice/static/css/main.f309cffb.css",
-    "main.js": "/fabinvoice/static/js/main.0674cfbe.js",
+    "main.css": "/fabinvoice/static/css/main.40acd867.css",
+    "main.js": "/fabinvoice/static/js/main.b6e1744a.js",
     "static/js/498.da229744.chunk.js": "/fabinvoice/static/js/498.da229744.chunk.js",
     "static/js/703.aec6759c.chunk.js": "/fabinvoice/static/js/703.aec6759c.chunk.js",
     "static/js/560.ab2f7f81.chunk.js": "/fabinvoice/static/js/560.ab2f7f81.chunk.js",
@@ -10,15 +10,15 @@
     "static/media/fabevy-logo-landscape.png": "/fabinvoice/static/media/fabevy-logo-landscape.b8c7c0b68b62e0c9c23b.png",
     "static/media/rupee-symbol.png": "/fabinvoice/static/media/rupee-symbol.d94e382acf04a33c031c.png",
     "index.html": "/fabinvoice/index.html",
-    "main.f309cffb.css.map": "/fabinvoice/static/css/main.f309cffb.css.map",
-    "main.0674cfbe.js.map": "/fabinvoice/static/js/main.0674cfbe.js.map",
+    "main.40acd867.css.map": "/fabinvoice/static/css/main.40acd867.css.map",
+    "main.b6e1744a.js.map": "/fabinvoice/static/js/main.b6e1744a.js.map",
     "498.da229744.chunk.js.map": "/fabinvoice/static/js/498.da229744.chunk.js.map",
     "703.aec6759c.chunk.js.map": "/fabinvoice/static/js/703.aec6759c.chunk.js.map",
     "560.ab2f7f81.chunk.js.map": "/fabinvoice/static/js/560.ab2f7f81.chunk.js.map",
     "787.71c8cd4b.chunk.js.map": "/fabinvoice/static/js/787.71c8cd4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f309cffb.css",
-    "static/js/main.0674cfbe.js"
+    "static/css/main.40acd867.css",
+    "static/js/main.b6e1744a.js"
   ]
 }

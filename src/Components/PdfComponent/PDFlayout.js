@@ -174,8 +174,9 @@ const PDFlayout = (props)=>{
         },
         h2Title:{
             textAlign: 'right',
-            fontSize: '38px',
-            fontWeight: 'normal'
+            fontSize: '34px',
+            fontWeight: 'bold',
+            textTransform:"uppercase"
         },
         estimatetab:{
             display: 'flex',
@@ -455,8 +456,13 @@ const PDFlayout = (props)=>{
             textTransform: 'capitalize'
         },
         ftrtxt:{
-            fontSize: '20px',
+            fontSize: '18px',
             padding: '0px 0 20px',
+            lineHeight: '24px'
+        },
+        ftrtxt2:{
+            fontSize: '18px',
+            padding: '0px 0 5px',
             lineHeight: '24px'
         },
         signature:{
@@ -482,8 +488,7 @@ const PDFlayout = (props)=>{
                 </div>
                 <div style={setStyles.col}>
                     <p style={setStyles.hTitle}>
-                        Fabevy&nbsp;Technologies&nbsp;(OPC)<br/> 
-                        Private&nbsp;Limited
+                        Fabevy software services private limited
                     </p>
                     <p>
                         Tirunalveli Tamil Nadu 627806<br/>
@@ -492,7 +497,7 @@ const PDFlayout = (props)=>{
                     </p>
                 </div>
                 <div style={setStyles.col12}>
-                    <h2 style={setStyles.h2Title}>Proforma Invoice</h2>
+                    <h2 style={setStyles.h2Title}>Tax Invoice</h2>
                 </div>
             </div>
 
@@ -624,17 +629,14 @@ const PDFlayout = (props)=>{
                     <h3 style={setStyles.txtTotal}>Total In Words</h3>
                     <p style={setStyles.txtWord}>Indian Rupee {amtWrd}</p>
 
-                    <p style={setStyles.ftrtxt}>Looking forward for your business.</p>
-                    <p style={setStyles.ftrtxt}>Account Details:</p>
+                    <p style={setStyles.ftrtxt}>Thanks for your business.</p>
+                    <p style={setStyles.ftrtxt2}>Please make the payment to:</p>
                     <p style={setStyles.ftrtxt}>
-                        Name of the Beneficiary: Fabevy Technologies (OPC) Private Limited
+                        Name: FABEVY SOFTWARE SERVICES PVT LTD
                         <br/>
-                        Bank A/C No: 270805000541<br/>
-                        Bank Name: ICICI Bank<br/>
-                        Branch Name: SIRUSERI<br/>
-                        A/C Type: CURRENT<br/>
-                        MICR Code: 600229118<br/>
-                        IFSC Code: ICIC0002708
+                        Account Number: 0699360000000751<br/>
+                        IFSC CODE: DBSS0IN0699<br/>
+                        A/C Type: CURRENT
                     </p>
                 </div>
                 <div style={setStyles.billmathamout}>
@@ -648,7 +650,7 @@ const PDFlayout = (props)=>{
                     </div>
                     <div style={setStyles.finalamtlist}>
                         <div style={setStyles.col6}>
-                            CGST 
+                            CGST(9%)
                         </div>
                         <div style={setStyles.col6}>
                             {cgstAmt}.00
@@ -656,7 +658,7 @@ const PDFlayout = (props)=>{
                     </div>
                     <div style={setStyles.finalamtlist}>
                         <div style={setStyles.col6}>
-                            SGST
+                            SGST(9%)
                         </div>
                         <div style={setStyles.col6}>
                             {sgstAmt}.00

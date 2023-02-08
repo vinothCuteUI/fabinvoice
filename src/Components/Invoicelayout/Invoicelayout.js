@@ -299,7 +299,7 @@ const Invoicelayout = (props)=>{
                 <div className={classes.invoiceBtn}>
                 
                     <button className={formclasses.btns} disabled={!formIsValid} onClick={onGenerate}>Generate PDF</button>
-                    {!formIsValid && <p>Please fill the Invoice No, EST Date and Bill to..</p>}
+                    {!formIsValid && <p style={{marginTop:'20px', padding:'15px 10px', color: '#664d03',backgroundColor: '#fff3cd', borderColor: '#ffecb5'}}>(Invoice No, EST Date and Bill to) Should not be empty.!</p>}
                 </div>
             </div>
             {isGenerate &&

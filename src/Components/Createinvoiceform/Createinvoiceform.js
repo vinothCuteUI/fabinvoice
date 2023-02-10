@@ -48,13 +48,19 @@ const Createinvoiceform = (props)=>{
         }
         if(event.target.name === "QTY") {
             dispatchQtyInput({type: "REQUIRE", val: event.target.value});
-            setaddAmount(parseInt(rateInput.value * event.target.value));
+            setaddAmount(rateInput.value * event.target.value);
         }
         if(event.target.name === "RATE") {
             dispatchrateInput({type: "REQUIRE", val: event.target.value});
             setCgstAmt(parseInt(event.target.value * cgstInput.value)/100);
             setSgstAmt(parseInt(event.target.value * cgstInput.value)/100);
-            setaddAmount(parseInt(event.target.value * qtyInput.value));
+            if(qtyInput.value > 0){
+                
+                setaddAmount(event.target.value * qtyInput.value); 
+            }else{
+                setaddAmount(event.target.value);
+            }
+            
         }
         if(event.target.name === "CGSTPERSNT") {
             dispatchcgstInput({type: "INPT_GST", val: event.target.value});
@@ -104,6 +110,7 @@ const Createinvoiceform = (props)=>{
             sgstAmt: sgstAmt,
             amount: addAmount
         }
+        
         setInvoiceContext.onAddInvoice({...getInvoiceData, id: Math.random().toString()});
         setFormIsValid(false);
         dispatchdescriptionInput({type:""});
@@ -130,7 +137,7 @@ const Createinvoiceform = (props)=>{
                 <input type="number" className={`${classes["input-controls"]} ${ishsnInput === false ? classes["invalid-input"] : ''}`} name="HSNSAC" value={hsnInput.value} onChange={onInputHandler} onBlur={ontouchHandler} />
             </div>
             <div className={`${flexclasses["col"]} ${invoiceClasses["bill-item-title"]} align-items-stretch`}>
-                <input type="number" className={`${classes["input-controls"]} ${isQty === false ? classes["invalid-input"] : ''}`} name="QTY" value={qtyInput.value} onChange={onInputHandler} onBlur={ontouchHandler} />
+                <input type="number" min="1" className={`${classes["input-controls"]} ${isQty === false ? classes["invalid-input"] : ''}`} name="QTY" value={qtyInput.value} onChange={onInputHandler} onBlur={ontouchHandler} />
             </div>
             <div className={`${flexclasses["col"]} ${invoiceClasses["bill-item-title"]} align-items-stretch`}>
                 <input type="number" className={`${classes["input-controls"]} ${israteInput === false ? classes["invalid-input"] : ''}`} name="RATE" value={rateInput.value} onChange={onInputHandler} onBlur={ontouchHandler} />

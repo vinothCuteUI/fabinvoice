@@ -29,19 +29,20 @@ const Invoicelayout = (props)=>{
     const {isValid: isBillToInput} = billToInput; 
 
     useEffect(()=>{
-        const getTotal = new Intl.NumberFormat('en-IN').format(setInvoiceContext.totalAmt)
-        const getSubTotal = new Intl.NumberFormat('en-IN').format(setInvoiceContext.subTotal)
-        const getcgst = new Intl.NumberFormat('en-IN').format(setInvoiceContext.cgst)
-        const getsgst = new Intl.NumberFormat('en-IN').format(setInvoiceContext.sgst)
+        const getTotal = new Intl.NumberFormat('en-IN').format(setInvoiceContext.totalAmt);
+        const getSubTotal = new Intl.NumberFormat('en-IN').format(setInvoiceContext.subTotal);
+        const getcgst = new Intl.NumberFormat('en-IN').format(setInvoiceContext.cgst);
+        const getsgst = new Intl.NumberFormat('en-IN').format(setInvoiceContext.sgst);
+        // console.log(setInvoiceContext.totalAmt);
         const amountWords = Convertnumberstr(setInvoiceContext.totalAmt);
+        
         setTotalAmt(getTotal);
         setsubTotalAmt(getSubTotal);
         setAmtWrd(amountWords);
         setcgstAmt(getcgst);
         setsgstAmt(getsgst);
         // console.log(setInvoiceContext.item);
-    }, [setInvoiceContext.totalAmt, setInvoiceContext.subTotal, setInvoiceContext.cgst, setInvoiceContext.sgst]);
-
+    }, [setInvoiceContext.subTotal, setInvoiceContext.cgst, setInvoiceContext.sgst]);
 
 
     useEffect(()=>{
@@ -51,7 +52,7 @@ const Invoicelayout = (props)=>{
         return ()=>{
             clearTimeout(identifier);
         }
-    }, [isESTInput && isESTDate && isBillToInput])
+    }, [isESTInput && isESTDate && isBillToInput]);
    
     const onInputHandler = (event)=> {
 
@@ -114,7 +115,6 @@ const Invoicelayout = (props)=>{
     return(
         <Fragment>
 
-        
             <div className={`${classes["inovice-container"]}`}>
                 <div className={`${flexclasses["row"]} ${classes["estimate-tab"]}`}>
                     <div className={`${flexclasses["col-md-6"]} ${classes["estimate-col"]}`}>
@@ -219,7 +219,7 @@ const Invoicelayout = (props)=>{
                                     <span>{item.qty}.00</span>
                                 </div>
                                 <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} align-items-start justify-content-end`}>
-                                    <span>{item.rate}.00</span>
+                                    <span>{parseInt(item.rate) === item.rate ? item.rate+".00" : item.rate}</span>
                                 </div>
                                 <div className={`${flexclasses["col-2"]} ${classes["bill-item-title"]} p-0 align-items-stretch`}>
                                     
@@ -227,7 +227,7 @@ const Invoicelayout = (props)=>{
                                         <span>{item.cgstPersent}%</span>    
                                     </div>
                                     <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right b-t-0`}>
-                                        <span>{item.cgstAmt}.00</span>    
+                                        <span>{parseInt(item.cgstAmt) === item.cgstAmt ? item.cgstAmt+".00": item.cgstAmt}</span>    
                                     </div>
                                     
                                 </div>
@@ -237,12 +237,12 @@ const Invoicelayout = (props)=>{
                                         <span>{item.sgstPersent}%</span>    
                                     </div>
                                     <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right b-t-0`}>
-                                        <span>{item.sgstAmt}.00</span>    
+                                        <span>{parseInt(item.sgstAmt) === item.sgstAmt ? item.sgstAmt+".00": item.sgstAmt}</span>    
                                     </div>
                                     
                                 </div>
                                 <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} ${classes["bill-item-action"]} align-items-start justify-content-end`}>
-                                    <span>{item.amount}.00</span>
+                                    <span>{parseInt(item.amount) === item.amount ? item.amount+".00": item.amount}</span>
                                     <button className={`${formclasses["btns"]} ${formclasses["btns-secondary"]} ${classes["delete-btn"]}`} onClick={onRemoveItem.bind(null, item.id)} >-</button>
                                 </div>
                             </div>
@@ -264,7 +264,7 @@ const Invoicelayout = (props)=>{
                                     Sub Total
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {subtotalAmt}.00
+                                    {parseInt(subtotalAmt) === subtotalAmt ? subtotalAmt+".00":subtotalAmt}
                                 </div>
                             </div>
                             <div className={`d-flex ${classes["final-amt-list"]}`}>
@@ -272,7 +272,7 @@ const Invoicelayout = (props)=>{
                                     CGST 
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {cgstAmt}.00
+                                    {parseInt(cgstAmt) === cgstAmt ? cgstAmt+".00":cgstAmt}
                                 </div>
                             </div>
                             <div className={`d-flex ${classes["final-amt-list"]}`}>
@@ -280,7 +280,8 @@ const Invoicelayout = (props)=>{
                                     SGST
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {sgstAmt}.00
+                                    {parseInt(sgstAmt) === sgstAmt ? sgstAmt+".00":sgstAmt}
+                                    
                                 </div>
                             </div>
                             <div className={`d-flex ${classes["final-amt-list"]} text-bold`}>

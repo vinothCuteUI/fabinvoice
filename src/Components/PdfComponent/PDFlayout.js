@@ -224,13 +224,13 @@ const PDFlayout = (props)=>{
             display:"flex",
             backgroundColor:'#f5f5f5',
             fontWeight:'bold',
-            fontSize:'16px'
+            fontSize:'14px'
         },
         billcontentrow:{
             display:"flex",
             backgroundColor:'#fff',
             fontWeight:'normal',
-            fontSize:'16px'
+            fontSize:'14px'
         },
         billitemDesc:{
             borderWidth: '0px 0px 1px 1px',
@@ -491,7 +491,7 @@ const PDFlayout = (props)=>{
                         Fabevy software services private limited
                     </p>
                     <p>
-                        Tirunalveli Tamil Nadu 627806<br/>
+                        Tirunelveli Tamil Nadu 627806<br/>
                         India<br/>
                         GSTIN: 33AADCF7286K1ZA
                     </p>
@@ -523,7 +523,7 @@ const PDFlayout = (props)=>{
                 <div style={setStyles.estimatecolrt}>
                     <div style={setStyles.row}>
                         <div style={setStyles.col6}>
-                            <p style={setStyles.pb1}>Place of Supplay</p>
+                            <p style={setStyles.pb1}>Place of Supply</p>
                         </div>
                         <div style={setStyles.col6}>
                             <p style={setStyles.pb1}><b>:Tami Nadu(33)</b></p>
@@ -597,14 +597,14 @@ const PDFlayout = (props)=>{
                                     <span>{item.qty}.00</span>
                                 </div>
                                 <div style={setStyles.billitemrate}>
-                                    <span>{item.rate}.00</span>
+                                    <span>{parseInt(item.rate) === item.rate ? item.rate+".00":item.rate}</span>
                                 </div>
                                 <div style={setStyles.billitemtitlecgst}> 
                                     <div style={setStyles.billgstcntlt}>
                                         <span>{item.cgstPersent}%</span>    
                                     </div>
                                     <div style={setStyles.billgstcntrt}>
-                                        <span>{item.cgstAmt}.00</span>    
+                                        <span>{parseInt(item.cgstAmt) === item.cgstAmt ? item.cgstAmt+".00":item.cgstAmt}</span>    
                                     </div>
                                 </div>
                                 <div style={setStyles.billitemtitlesgst}>  
@@ -612,11 +612,11 @@ const PDFlayout = (props)=>{
                                         <span>{item.sgstPersent}%</span>    
                                     </div>
                                     <div style={setStyles.billgstcntrt}>
-                                        <span>{item.sgstAmt}.00</span>    
+                                        <span>{parseInt(item.sgstAmt) === item.sgstAmt ? item.sgstAmt+".00" : item.sgstAmt}</span>    
                                     </div>
                                 </div>
                                 <div style={setStyles.billitemamt}>
-                                    <span>{item.amount}.00</span>
+                                    <span>{parseInt(item.amount) === item.amount ? item.amount+".00":item.amount}</span>
                                 </div>
                             </div>
                     })
@@ -626,7 +626,7 @@ const PDFlayout = (props)=>{
 
             <div  style={setStyles.invoiceFooter}>
                 <div style={setStyles.billtextamout}>
-                    <h3 style={setStyles.txtTotal}>Total In Words</h3>
+                    <h3 style={setStyles.txtTotal}>Amount In Words</h3>
                     <p style={setStyles.txtWord}>Indian Rupee {amtWrd}</p>
 
                     <p style={setStyles.ftrtxt}>Thanks for your business.</p>
@@ -645,7 +645,7 @@ const PDFlayout = (props)=>{
                             Sub Total
                         </div>
                         <div style={setStyles.col6}>
-                            {subtotalAmt}.00
+                            {parseInt(subtotalAmt) === subtotalAmt ? subtotalAmt+".00":subtotalAmt}
                         </div>
                     </div>
                     <div style={setStyles.finalamtlist}>
@@ -653,7 +653,7 @@ const PDFlayout = (props)=>{
                             CGST(9%)
                         </div>
                         <div style={setStyles.col6}>
-                            {cgstAmt}.00
+                            {parseInt(cgstAmt) === cgstAmt ? cgstAmt+".00":cgstAmt}
                         </div>
                     </div>
                     <div style={setStyles.finalamtlist}>
@@ -661,7 +661,7 @@ const PDFlayout = (props)=>{
                             SGST(9%)
                         </div>
                         <div style={setStyles.col6}>
-                            {sgstAmt}.00
+                            {parseInt(sgstAmt) === sgstAmt ? sgstAmt+".00":sgstAmt}
                         </div>
                     </div>
                     <div style={setStyles.finalamtlist}>

@@ -19,13 +19,14 @@ const itemInvoiceReducer = (state, action) => {
     const updateCgst = state.cgst + action.items.cgstAmt;
     const updateSgst = state.sgst + action.items.sgstAmt;
     const totalAmt = upateSubTotal + updateCgst + updateSgst;
+    console.log(totalAmt);
     // const isExitsItem = state.item.findIndex(e => e.id === action.items.id);
     return {
       items: updateItem,
       subTotal:upateSubTotal,
       cgst:updateCgst,
       sgst:updateSgst,
-      totalAmt:totalAmt,
+      totalAmt:Math.ceil(totalAmt),
     }
 
   }
@@ -45,7 +46,7 @@ const itemInvoiceReducer = (state, action) => {
         subTotal:upateSubTotal,
         cgst:updateCgst,
         sgst:updateSgst,
-        totalAmt:updatetotalAmt,
+        totalAmt:Math.ceil(updatetotalAmt),
       }
     }
     

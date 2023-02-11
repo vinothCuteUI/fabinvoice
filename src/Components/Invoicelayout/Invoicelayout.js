@@ -219,7 +219,7 @@ const Invoicelayout = (props)=>{
                                     <span>{item.qty}.00</span>
                                 </div>
                                 <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} align-items-start justify-content-end`}>
-                                    <span>{parseInt(item.rate) === item.rate ? item.rate+".00" : item.rate}</span>
+                                    <span>{parseInt(item.rate) == item.rate ? item.rate+".00" : item.rate}</span>
                                 </div>
                                 <div className={`${flexclasses["col-2"]} ${classes["bill-item-title"]} p-0 align-items-stretch`}>
                                     
@@ -264,7 +264,7 @@ const Invoicelayout = (props)=>{
                                     Sub Total
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {parseInt(subtotalAmt) === subtotalAmt ? subtotalAmt+".00":subtotalAmt}
+                                    {parseInt(subtotalAmt) == subtotalAmt ? subtotalAmt+".00":subtotalAmt}
                                 </div>
                             </div>
                             <div className={`d-flex ${classes["final-amt-list"]}`}>
@@ -272,7 +272,7 @@ const Invoicelayout = (props)=>{
                                     CGST 
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {parseInt(cgstAmt) === cgstAmt ? cgstAmt+".00":cgstAmt}
+                                    {parseInt(cgstAmt) == cgstAmt ? cgstAmt+".00":cgstAmt}
                                 </div>
                             </div>
                             <div className={`d-flex ${classes["final-amt-list"]}`}>
@@ -280,7 +280,7 @@ const Invoicelayout = (props)=>{
                                     SGST
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {parseInt(sgstAmt) === sgstAmt ? sgstAmt+".00":sgstAmt}
+                                    {parseInt(sgstAmt) == sgstAmt ? sgstAmt+".00":sgstAmt}
                                     
                                 </div>
                             </div>

@@ -22,7 +22,7 @@ export const VALIDATOR_QTY = (state, action)=>{
     if(action.type === "ON_BLUR"){
         return {value: state.value, isValid: state.value.trim().length > 0}
     }
-    return {value:'1', isValid:null}
+    return {value:'1', isValid:true}
 }
 
 // export const esDateReducer = (state, action)=>{

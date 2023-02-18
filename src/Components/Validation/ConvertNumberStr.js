@@ -4,6 +4,7 @@ const arrTenth = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','
 
 export const Convertnumberstr = (num)=>{
     let getNum = "000000000"+num;
+    
     getNum = getNum.slice(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})/).splice(1, 5);
    
     if(getNum){

@@ -1,7 +1,6 @@
-import React, { useEffect, useReducer, useState, useContext } from "react";
-import { VALIDATOR_REQUIRE, VALIDATOR_GST  } from "../Validation/Invoicevalidation";
+import React, { useEffect, useReducer, useState, useContext, useRef } from "react";
+import { VALIDATOR_REQUIRE, VALIDATOR_GST, VALIDATOR_QTY  } from "../Validation/Invoicevalidation";
 import classes from "./Createinvoiceform.module.css";
-import Flexbox from "../Flexbox/Flexbox";
 import flexclasses from '../Flexbox/Flexbox.module.css';
 import invoiceClasses from '../Invoicelayout/Invoicelayout.module.css';
 import Createtextinvoce from "../Data-store/CreateText-invoice";
@@ -12,13 +11,13 @@ const Createinvoiceform = (props)=>{
 
     const [descriptionInput, dispatchdescriptionInput] = useReducer(VALIDATOR_REQUIRE, {value:'', isValid: null});
     const [hsnInput, dispatchHsnInput] = useReducer(VALIDATOR_REQUIRE, {value:'', isValid: null});
-    const [qtyInput, dispatchQtyInput] = useReducer(VALIDATOR_REQUIRE, {value:'', isValid: null});
+    const [qtyInput, dispatchQtyInput] = useReducer(VALIDATOR_QTY, {value:'1', isValid: true});
     const [rateInput, dispatchrateInput] = useReducer(VALIDATOR_REQUIRE, {value:'', isValid: null});
     const [cgstInput, dispatchcgstInput] = useReducer(VALIDATOR_GST, {value:'9', isValid: true});
     const [sgstInput, dispatchsgstInput] = useReducer(VALIDATOR_GST, {value:'9', isValid: true});
-    const [cgstAmt, setCgstAmt] = useState(0);
-    const [sgstAmt, setSgstAmt] = useState(0);
-    const [addAmount, setaddAmount] = useState(0);
+    const cgstAmtRef = useRef(0);
+    const sgstAmtRef = useRef(0);
+    const addAmountRef = useRef(0);
     const [formIsValid, setFormIsValid] = useState(false);
 
  
@@ -48,27 +47,34 @@ const Createinvoiceform = (props)=>{
         }
         if(event.target.name === "QTY") {
             dispatchQtyInput({type: "REQUIRE", val: event.target.value});
-            setaddAmount(rateInput.value * event.target.value);
+            let setQtyRate = event.target.value * Number(rateInput.value);
+            let setCgst = ((event.target.value * setQtyRate) * cgstInput.value)/100;
+            let setSgst = ((event.target.value * setQtyRate) * sgstInput.value)/100;
+            cgstAmtRef.current.value = setCgst.toFixed(2);
+            sgstAmtRef.current.value = setSgst.toFixed(2);
+            addAmountRef.current.value = Number(setQtyRate).toFixed(2);
+        
         }
         if(event.target.name === "RATE") {
             dispatchrateInput({type: "REQUIRE", val: event.target.value});
-            setCgstAmt(parseInt(event.target.value * cgstInput.value)/100);
-            setSgstAmt(parseInt(event.target.value * cgstInput.value)/100);
-            if(qtyInput.value > 0){
-                
-                setaddAmount(event.target.value * qtyInput.value); 
-            }else{
-                setaddAmount(event.target.value);
-            }
+            let setCgst = Number(event.target.value * cgstInput.value)/100;
+            let setSgst = Number(event.target.value * sgstInput.value)/100;
+            cgstAmtRef.current.value = setCgst.toFixed(2);
+            sgstAmtRef.current.value = setSgst.toFixed(2);
+            // setSgstAmt(Number(event.target.value * sgstInput.value)/100);
+            let setQtyRate = qtyInput.value * Number(event.target.value);;
+            addAmountRef.current.value = setQtyRate.toFixed(2); 
+           
+            // console.log(Math.ceil(qtyInput.value * (Number(event.target.value) + cgstAmt + sgstAmt)))
             
         }
         if(event.target.name === "CGSTPERSNT") {
             dispatchcgstInput({type: "INPT_GST", val: event.target.value});
-            setCgstAmt(parseInt(rateInput.value * event.target.value)/100);
+            cgstAmtRef.current.value = Number(rateInput.value * event.target.value)/100;
         }
         if(event.target.name === "SGSTPERSNT") {
             dispatchsgstInput({type: "INPT_GST", val: event.target.value});
-            setSgstAmt(parseInt(rateInput.value * event.target.value)/100);
+            sgstAmtRef.current.value = Number(rateInput.value * event.target.value)/100;
         }
         
         setFormIsValid(isdecription && ishsnInput && isQty && israteInput && iscgstInput && issgstInput)
@@ -101,14 +107,14 @@ const Createinvoiceform = (props)=>{
         event.preventDefault();
         const getInvoiceData = {
             itemDescription: descriptionInput.value,
-            hsnSac: hsnInput.value,
-            qty: qtyInput.value,
-            rate: rateInput.value,
-            cgstPersent: cgstInput.value,
-            cgstAmt: cgstAmt,
-            sgstPersent: sgstInput.value,
-            sgstAmt: sgstAmt,
-            amount: addAmount
+            hsnSac: Number(hsnInput.value),
+            qty: Number(qtyInput.value),
+            rate: Number(rateInput.value),
+            cgstPersent: Number(cgstInput.value),
+            cgstAmt: Number(cgstAmtRef.current.value),
+            sgstPersent: Number(sgstInput.value),
+            sgstAmt: Number(sgstAmtRef.current.value),
+            amount: Number(addAmountRef.current.value)
         }
         
         setInvoiceContext.onAddInvoice({...getInvoiceData, id: Math.random().toString()});
@@ -119,9 +125,9 @@ const Createinvoiceform = (props)=>{
         dispatchrateInput({type:""});
         dispatchcgstInput({type:""});
         dispatchsgstInput({type:""});
-        setCgstAmt(0);
-        setSgstAmt(0);
-        setaddAmount(0);
+        cgstAmtRef.current.value = 0;
+        sgstAmtRef.current.value = 0;
+        addAmountRef.current.value = 0;
     }
 
     return(
@@ -148,7 +154,7 @@ const Createinvoiceform = (props)=>{
                     <input type="number" className={`${classes["input-controls"]} ${iscgstInput === false ? classes["invalid-input"] : ''}`} name="CGSTPERSNT" value={cgstInput.value} min= "1" max="100" onChange={onInputHandler} onBlur={ontouchHandler} />    
                 </div>
                 <div className={`${flexclasses["col"]} ${invoiceClasses["bill-gst-bx"]} text-right b-t-0`}>
-                    <input type="text" value={cgstAmt} className={classes["input-controls"]}  disabled />  
+                    <input type="text" ref={cgstAmtRef} className={classes["input-controls"]}  disabled />  
                 </div>
                 
             </div>
@@ -158,13 +164,13 @@ const Createinvoiceform = (props)=>{
                     <input type="number" className={`${classes["input-controls"]} ${issgstInput === false ? classes["invalid-input"] : ''}`} name="SGSTPERSNT" value={sgstInput.value} min= "1" max="100" onChange={onInputHandler} onBlur={ontouchHandler} />
                 </div>
                 <div className={`${flexclasses["col"]} ${invoiceClasses["bill-gst-bx"]} text-right b-t-0`}>
-                    <input type="text" value={sgstAmt} className={classes["input-controls"]} disabled />   
+                    <input type="text" ref={sgstAmtRef} className={classes["input-controls"]} disabled />   
                 </div>
                 
             </div>
             <div className={`${flexclasses["col"]} ${invoiceClasses["bill-item-title"]} ${invoiceClasses["bill-item-amt"]} align-items-stretch`}>
                 
-                <input type="text" value={addAmount} className={classes["input-controls"]} disabled />
+                <input type="text" ref={addAmountRef} className={classes["input-controls"]} disabled />
                 <div className={`${invoiceClasses["action-btns"]} d-flex`}>
                     <button type="submit" className={`${classes["btns"]}`} disabled={!formIsValid} >Add</button>
                     {/* <button className={`${classes["btns"]} ${classes["btns-secondary"]}`}>Hide</button> */}

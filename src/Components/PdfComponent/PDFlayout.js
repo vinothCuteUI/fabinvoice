@@ -3,7 +3,7 @@ import invoicelogo from "../../assets/images/invoice-logo.png";
 import rupeesymbol from '../../assets/images/rupee-symbol.png';
 import Createtextinvoce from "../Data-store/CreateText-invoice";
 import { Convertnumberstr } from "../Validation/ConvertNumberStr";
-
+import {SetNumCnvrt, ConvertNumberFormat} from '../Validation/SetNumConvert';
 
 const PDFlayout = (props)=>{
 
@@ -17,19 +17,20 @@ const PDFlayout = (props)=>{
     const [esDate, setEsDate] = useState('');
 
     useEffect(()=>{
-        const getTotal = new Intl.NumberFormat('en-IN').format(getTextInvoice.totalAmt)
-        const getSubTotal = new Intl.NumberFormat('en-IN').format(getTextInvoice.subTotal)
-        const getcgst = new Intl.NumberFormat('en-IN').format(getTextInvoice.cgst)
-        const getsgst = new Intl.NumberFormat('en-IN').format(getTextInvoice.sgst)
+        
+        const getTotal = ConvertNumberFormat(getTextInvoice.totalAmt)
+        const getSubTotal = ConvertNumberFormat(getTextInvoice.subTotal)
+        const getcgst = ConvertNumberFormat(getTextInvoice.cgst)
+        const getsgst = ConvertNumberFormat(getTextInvoice.sgst)
         const amountWords = Convertnumberstr(getTextInvoice.totalAmt);
+        
         setTotalAmt(getTotal);
-        setsubTotalAmt(getSubTotal);
+        setsubTotalAmt(SetNumCnvrt(getSubTotal));
         setAmtWrd(amountWords);
-        setcgstAmt(getcgst);
-        setsgstAmt(getsgst);
+        setcgstAmt(SetNumCnvrt(getcgst));
+        setsgstAmt(SetNumCnvrt(getsgst));
         const esdd = (getTextInvoice.item.estDate).split('-').reverse().join("-");
         setEsDate(esdd);
-        // console.log(getTextInvoice.item);
     }, [getTextInvoice.item.estDate, getTextInvoice.totalAmt, getTextInvoice.subTotal, getTextInvoice.cgst, getTextInvoice.sgst]);
 
     const setStyles = {
@@ -597,14 +598,14 @@ const PDFlayout = (props)=>{
                                     <span>{item.qty}.00</span>
                                 </div>
                                 <div style={setStyles.billitemrate}>
-                                    <span>{parseInt(item.rate) === item.rate ? item.rate+".00":item.rate}</span>
+                                    <span>{SetNumCnvrt(ConvertNumberFormat(item.rate))}</span>
                                 </div>
                                 <div style={setStyles.billitemtitlecgst}> 
                                     <div style={setStyles.billgstcntlt}>
                                         <span>{item.cgstPersent}%</span>    
                                     </div>
                                     <div style={setStyles.billgstcntrt}>
-                                        <span>{parseInt(item.cgstAmt) === item.cgstAmt ? item.cgstAmt+".00":item.cgstAmt}</span>    
+                                        <span>{SetNumCnvrt(ConvertNumberFormat(item.cgstAmt))}</span>    
                                     </div>
                                 </div>
                                 <div style={setStyles.billitemtitlesgst}>  
@@ -612,11 +613,11 @@ const PDFlayout = (props)=>{
                                         <span>{item.sgstPersent}%</span>    
                                     </div>
                                     <div style={setStyles.billgstcntrt}>
-                                        <span>{parseInt(item.sgstAmt) === item.sgstAmt ? item.sgstAmt+".00" : item.sgstAmt}</span>    
+                                        <span>{SetNumCnvrt(ConvertNumberFormat(item.sgstAmt))}</span>    
                                     </div>
                                 </div>
                                 <div style={setStyles.billitemamt}>
-                                    <span>{parseInt(item.amount) === item.amount ? item.amount+".00":item.amount}</span>
+                                    <span>{SetNumCnvrt(ConvertNumberFormat(item.amount))}</span>
                                 </div>
                             </div>
                     })
@@ -628,7 +629,6 @@ const PDFlayout = (props)=>{
                 <div style={setStyles.billtextamout}>
                     <h3 style={setStyles.txtTotal}>Amount In Words</h3>
                     <p style={setStyles.txtWord}>Indian Rupee {amtWrd}</p>
-
                     <p style={setStyles.ftrtxt}>Thanks for your business.</p>
                     <p style={setStyles.ftrtxt2}>Please make the payment to:</p>
                     <p style={setStyles.ftrtxt}>
@@ -645,7 +645,7 @@ const PDFlayout = (props)=>{
                             Sub Total
                         </div>
                         <div style={setStyles.col6}>
-                            {parseInt(subtotalAmt) === subtotalAmt ? subtotalAmt+".00":subtotalAmt}
+                            {subtotalAmt}
                         </div>
                     </div>
                     <div style={setStyles.finalamtlist}>
@@ -653,7 +653,7 @@ const PDFlayout = (props)=>{
                             CGST(9%)
                         </div>
                         <div style={setStyles.col6}>
-                            {parseInt(cgstAmt) === cgstAmt ? cgstAmt+".00":cgstAmt}
+                            {cgstAmt}
                         </div>
                     </div>
                     <div style={setStyles.finalamtlist}>
@@ -661,7 +661,7 @@ const PDFlayout = (props)=>{
                             SGST(9%)
                         </div>
                         <div style={setStyles.col6}>
-                            {parseInt(sgstAmt) === sgstAmt ? sgstAmt+".00":sgstAmt}
+                            {sgstAmt}
                         </div>
                     </div>
                     <div style={setStyles.finalamtlist}>

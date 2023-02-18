@@ -6,7 +6,10 @@ import formclasses from "../Createinvoiceform/Createinvoiceform.module.css";
 import flexclasses from "../Flexbox/Flexbox.module.css";
 import Createtextinvoce from "../Data-store/CreateText-invoice";
 import { Convertnumberstr } from "../Validation/ConvertNumberStr";
+import {SetNumCnvrt, ConvertNumberFormat} from '../Validation/SetNumConvert';
 import PDFComponent from "../PdfComponent/PDFComponent";
+import Pricecals from "../Pricecals/Pricecals";
+
 
 const Invoicelayout = (props)=>{
     const setInvoiceContext = useContext(Createtextinvoce);
@@ -29,18 +32,22 @@ const Invoicelayout = (props)=>{
     const {isValid: isBillToInput} = billToInput; 
 
     useEffect(()=>{
-        const getTotal = new Intl.NumberFormat('en-IN').format(setInvoiceContext.totalAmt);
-        const getSubTotal = new Intl.NumberFormat('en-IN').format(setInvoiceContext.subTotal);
-        const getcgst = new Intl.NumberFormat('en-IN').format(setInvoiceContext.cgst);
-        const getsgst = new Intl.NumberFormat('en-IN').format(setInvoiceContext.sgst);
+        const getTotal = ConvertNumberFormat(setInvoiceContext.totalAmt);
+        const getSubTotal = ConvertNumberFormat(setInvoiceContext.subTotal);
+        const getcgst = ConvertNumberFormat(setInvoiceContext.cgst);
+        const getsgst = ConvertNumberFormat(setInvoiceContext.sgst);
         // console.log(setInvoiceContext.totalAmt);
-        const amountWords = Convertnumberstr(setInvoiceContext.totalAmt);
         
-        setTotalAmt(getTotal);
-        setsubTotalAmt(getSubTotal);
+        let amountWords = null;
+        if(setInvoiceContext.totalAmt){
+            amountWords = Convertnumberstr(setInvoiceContext.totalAmt);
+        }
+        
+        setTotalAmt(SetNumCnvrt(getTotal));
+        setsubTotalAmt(SetNumCnvrt(getSubTotal));
         setAmtWrd(amountWords);
-        setcgstAmt(getcgst);
-        setsgstAmt(getsgst);
+        setcgstAmt(SetNumCnvrt(getcgst));
+        setsgstAmt(SetNumCnvrt(getsgst));
         // console.log(setInvoiceContext.item);
     }, [setInvoiceContext.subTotal, setInvoiceContext.cgst, setInvoiceContext.sgst]);
 
@@ -219,7 +226,7 @@ const Invoicelayout = (props)=>{
                                     <span>{item.qty}.00</span>
                                 </div>
                                 <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} align-items-start justify-content-end`}>
-                                    <span>{parseInt(item.rate) == item.rate ? item.rate+".00" : item.rate}</span>
+                                    <span>{SetNumCnvrt(ConvertNumberFormat(item.rate))}</span>
                                 </div>
                                 <div className={`${flexclasses["col-2"]} ${classes["bill-item-title"]} p-0 align-items-stretch`}>
                                     
@@ -227,7 +234,7 @@ const Invoicelayout = (props)=>{
                                         <span>{item.cgstPersent}%</span>    
                                     </div>
                                     <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right b-t-0`}>
-                                        <span>{parseInt(item.cgstAmt) === item.cgstAmt ? item.cgstAmt+".00": item.cgstAmt}</span>    
+                                        <span>{SetNumCnvrt(ConvertNumberFormat(item.cgstAmt))}</span>    
                                     </div>
                                     
                                 </div>
@@ -237,12 +244,12 @@ const Invoicelayout = (props)=>{
                                         <span>{item.sgstPersent}%</span>    
                                     </div>
                                     <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right b-t-0`}>
-                                        <span>{parseInt(item.sgstAmt) === item.sgstAmt ? item.sgstAmt+".00": item.sgstAmt}</span>    
+                                        <span>{SetNumCnvrt(ConvertNumberFormat(item.sgstAmt))}</span>    
                                     </div>
                                     
                                 </div>
                                 <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} ${classes["bill-item-action"]} align-items-start justify-content-end`}>
-                                    <span>{parseInt(item.amount) === item.amount ? item.amount+".00": item.amount}</span>
+                                    <span>{SetNumCnvrt(ConvertNumberFormat(item.amount))}</span>
                                     <button className={`${formclasses["btns"]} ${formclasses["btns-secondary"]} ${classes["delete-btn"]}`} onClick={onRemoveItem.bind(null, item.id)} >-</button>
                                 </div>
                             </div>
@@ -264,7 +271,7 @@ const Invoicelayout = (props)=>{
                                     Sub Total
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {parseInt(subtotalAmt) == subtotalAmt ? subtotalAmt+".00":subtotalAmt}
+                                    {subtotalAmt}
                                 </div>
                             </div>
                             <div className={`d-flex ${classes["final-amt-list"]}`}>
@@ -272,7 +279,7 @@ const Invoicelayout = (props)=>{
                                     CGST 
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {parseInt(cgstAmt) == cgstAmt ? cgstAmt+".00":cgstAmt}
+                                    {cgstAmt}
                                 </div>
                             </div>
                             <div className={`d-flex ${classes["final-amt-list"]}`}>
@@ -280,7 +287,7 @@ const Invoicelayout = (props)=>{
                                     SGST
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {parseInt(sgstAmt) == sgstAmt ? sgstAmt+".00":sgstAmt}
+                                    {sgstAmt}
                                     
                                 </div>
                             </div>
@@ -289,7 +296,7 @@ const Invoicelayout = (props)=>{
                                     Total
                                 </div>
                                 <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {totalAmt}.00
+                                    {totalAmt}
                                 </div>
                             </div>
                         </div>
@@ -306,6 +313,8 @@ const Invoicelayout = (props)=>{
             {isGenerate &&
                 <PDFComponent cancelPdf={onCancelPdf} />
             }
+
+            <Pricecals />
         
         </Fragment>
     )

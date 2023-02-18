@@ -19,7 +19,7 @@ const itemInvoiceReducer = (state, action) => {
     const updateCgst = state.cgst + action.items.cgstAmt;
     const updateSgst = state.sgst + action.items.sgstAmt;
     const totalAmt = upateSubTotal + updateCgst + updateSgst;
-    console.log(totalAmt);
+    // console.log(totalAmt);
     // const isExitsItem = state.item.findIndex(e => e.id === action.items.id);
     return {
       items: updateItem,

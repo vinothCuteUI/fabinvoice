@@ -15,7 +15,15 @@ export const VALIDATOR_REQUIRE = (state, action)=>{
     }
     return {value:'', isValid:null}
 }
-
+export const VALIDATOR_QTY = (state, action)=>{
+    if(action.type === VALIDATOR_TYPE_REQUIRE){
+        return {value: action.val, isValid: action.val.trim().length > 0}
+    }
+    if(action.type === "ON_BLUR"){
+        return {value: state.value, isValid: state.value.trim().length > 0}
+    }
+    return {value:'1', isValid:null}
+}
 
 // export const esDateReducer = (state, action)=>{
 //     if(action.type === "INPT_ESDATE"){

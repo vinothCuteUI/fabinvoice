@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useReducer, useState, Fragment } from "re
 import { VALIDATOR_REQUIRE  } from "../Validation/Invoicevalidation";
 import Createinvoiceform from "../Createinvoiceform/Createinvoiceform";
 import classes from "./Invoicelayout.module.css";
+import Container from "../Container/Container";
 import formclasses from "../Createinvoiceform/Createinvoiceform.module.css";
 import flexclasses from "../Flexbox/Flexbox.module.css";
 import Createtextinvoce from "../Data-store/CreateText-invoice";
@@ -128,184 +129,203 @@ const Invoicelayout = (props)=>{
         <Fragment>
 
             <div className={`${classes["inovice-container"]}`}>
-                <div className={`${flexclasses["row"]} ${classes["estimate-tab"]}`}>
-                    <div className={`${flexclasses["col-md-6"]} ${classes["estimate-col"]}`}>
-                        <div className={`${flexclasses["row"]}`}>
-                            <div className={`${flexclasses["col-md-6"]}`}>
-                                <span>#</span>
-                            </div>
-                            <div className={`${flexclasses["col-md-6"]} ${classes.estGroup}` }>
+                <Container className={`container-fluid`} >
+                    <div className={`${flexclasses["row"]} ${classes["estimate-tab"]}`}>
+                        <div className={`${flexclasses["col-md-6"]} ${classes["estimate-col"]}`}>
+                            <div className={`${flexclasses["row"]}`}>
+                                <div className={`${flexclasses["col-md-6"]}`}>
+                                    <span>#</span>
+                                </div>
+                                <div className={`${flexclasses["col-md-6"]} ${classes.estGroup}` }>
 
-                                <input type="text" name="ESTID" className={formclasses["input-controls"]} placeholder="Ex: 00014" 
-                                value={inputEST.value} onChange={onInputHandler} onBlur={ontouchHandler} />
+                                    <input type="text" name="ESTID" className={formclasses["input-controls"]} placeholder="Ex: 00014" 
+                                    value={inputEST.value} onChange={onInputHandler} onBlur={ontouchHandler} />
+                                </div>
+                            </div>
+                            <div className={`${flexclasses["row"]}`}>
+                                <div className={`${flexclasses["col-md-6"]}`}>
+                                    <span>Estimate Date</span>
+                                </div>
+                                <div className={`${flexclasses["col-md-6"]}`}>
+                                <input type="date" name="ESTDATE" value={esDateInput.value} onChange={onInputHandler} onBlur={ontouchHandler} className={formclasses["input-controls"]} />
+                                </div>
                             </div>
                         </div>
-                        <div className={`${flexclasses["row"]}`}>
-                            <div className={`${flexclasses["col-md-6"]}`}>
-                                <span>Estimate Date</span>
-                            </div>
-                            <div className={`${flexclasses["col-md-6"]}`}>
-                            <input type="date" name="ESTDATE" value={esDateInput.value} onChange={onInputHandler} onBlur={ontouchHandler} className={formclasses["input-controls"]} />
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`${flexclasses["col-md-6"]} ${classes["estimate-col"]}`}>
-                        <div className={`${flexclasses["row"]}`}>
-                            <div className={`${flexclasses["col-md-6"]}`}>
-                                <span>Place of Supplay</span>
-                            </div>
-                            <div className={`${flexclasses["col-md-6"]}`}>
-                                <span><b>Tami Nadu(33)</b></span>
+                        <div className={`${flexclasses["col-md-6"]} ${classes["estimate-col"]}`}>
+                            <div className={`${flexclasses["row"]}`}>
+                                <div className={`${flexclasses["col-md-6"]}`}>
+                                    <span>Place of Supplay</span>
+                                </div>
+                                <div className={`${flexclasses["col-md-6"]}`}>
+                                    <span><b>Tami Nadu(33)</b></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                
 
-                <div className={`${flexclasses["row"]} ${classes["bill-to-tab"]}`}>
-                    <div className={`${flexclasses["col-md-12"]} ${classes["bill-to-title"]} bg-light`}>
-                        <span>Bill To</span>
+                    <div className={`${flexclasses["row"]} ${classes["bill-to-tab"]}`}>
+                        <div className={`${flexclasses["col-md-12"]} ${classes["bill-to-title"]} bg-light`}>
+                            <span>Bill To</span>
+                        </div>
+                        <div className={`${flexclasses["col-md-12"]} ${classes["bill-to-content"]}`}>
+                            <input type="text" className={formclasses["input-controls"]} name="BILLTO" value={billToInput.value} onChange={onInputHandler} onBlur={ontouchHandler}  />
+                        </div>
                     </div>
-                    <div className={`${flexclasses["col-md-12"]} ${classes["bill-to-content"]}`}>
-                        <input type="text" className={formclasses["input-controls"]} name="BILLTO" value={billToInput.value} onChange={onInputHandler} onBlur={ontouchHandler}  />
-                    </div>
-                </div>
-
+                </Container>
                 <div className={`${classes["bill-item-tab"]}`}>
-                    <div className={`${flexclasses["row"]} ${classes["bill-item-row"]}`}>
-                        <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} ${classes["bill-item-no"]} bg-light`}>
-                            <span>#</span>
-                        </div>
-                        <div className={`${flexclasses["col-3"]} ${classes["bill-item-title"]} bg-light`}>
-                            <span>Item & Description</span>
-                        </div>
-                        <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} bg-light`}>
-                            <span>HSN/SAC</span>
-                        </div>
-                        <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} bg-light justify-content-end`}>
-                            <span>Qty</span>
-                        </div>
-                        <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} bg-light justify-content-end`}>
-                            <span>Rate</span>
-                        </div>
-                        <div className={`${flexclasses["col-2"]} ${classes["bill-item-title"]} bg-light p-r-0 p-b-0 p-l-0`}>
-                            <div className={`${flexclasses["col-12"]} ${classes["bill-gst-title"]} text-center`}>CGST</div>  
-                            <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right`}>
-                                <span>%</span>    
-                            </div>
-                            <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right`}>
-                                <span>Amt</span>    
-                            </div>
-                            
-                        </div>
-                        <div className={`${flexclasses["col-2"]} ${classes["bill-item-title"]} bg-light p-r-0 p-b-0 p-l-0`}>
-                            <div className={`${flexclasses["col-12"]} ${classes["bill-gst-title"]} text-center`}>SGST</div>  
-                            <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right`}>
-                                <span>%</span>    
-                            </div>
-                            <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right`}>
-                                <span>Amt</span>    
-                            </div>
-                            
-                        </div>
-                        <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} ${classes["bill-item-amt"]} bg-light justify-content-end`}>
-                            <span>Amount</span>
-                        </div>
-                    </div>
+                    <table style={{width:"100%", borderCollapse:"collapse"}}>
+                        <tbody>
+                            <tr style={{backgroundColor:"rgb(241 242 244)"}}>
+                                <th style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px"}}>#</th>
+                                <th style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px"}}>Item & Description</th>
+                                <th style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px"}}>HSN/SAC</th>
+                                <th style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px"}}>Qty</th>
+                                <th style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px"}}>Rate</th>
+                                <th style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"bottom", padding:"10px 0px 0px", fontSize:"16px"}}>
+                                    <table style={{width:"100%"}}>
+                                        <tbody>
+                                            <tr>
+                                                <th style={{textAlign:"center", padding:"0 0 10px 0"}}>CGST</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style={{width:"100%"}}>
+                                        <tbody>
+                                            <tr>
+                                                <th style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"1px 1px 0px 0px", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px", width:"100px"}}>%</th>
+                                                <th style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"1px 0px 0px 0px", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px"}}>Amt</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"bottom", padding:"10px 0px 0px", fontSize:"16px"}}>
+                                    <table style={{width:"100%"}}>
+                                        <tbody>
+                                            <tr>
+                                                <th style={{textAlign:"center", padding:"0 0 10px 0"}}>SGST</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table style={{width:"100%"}}>
+                                        <tbody>
+                                            <tr>
+                                                <th style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"1px 1px 0px 0px", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px", width:"100px"}}>%</th>
+                                                <th style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"1px 0px 0px 0px", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px"}}>Amt</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </th>
+                                <th style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"bottom", padding:"10px 15px 8px", fontSize:"16px"}}>Amount</th>
+                            </tr>
+                            <Createinvoiceform />
 
-                    <Createinvoiceform />
+                            {setInvoiceContext.invoiceitems.length > 0 && 
+                                setInvoiceContext.invoiceitems.map((item, indx) =>{
+                                    
+                                    return <tr key={item.id}>
+                                    <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>{indx+1}</td>
+                                    <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px", width:"360px"}}>
+                                        {item.itemDescription}
+                                    </td>
+                                    <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
+                                        {item.hsnSac}
+                                    </td>
+                                    <td style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px", width:"100px"}}>
+                                        {item.qty}.00
+                                    </td>
+                                    <td style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
+                                        {SetNumCnvrt(ConvertNumberFormat(item.rate))}
+                                    </td>
+                                    <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"0px 0px 0px", fontSize:"16px", position:"relative"}}>
 
-                    {setInvoiceContext.invoiceitems.length > 0 && 
-                        setInvoiceContext.invoiceitems.map((item, indx) =>{
-
-                            return <div key={item.id} className={`${flexclasses["row"]} ${classes["bill-item-row"]} ${classes["bill-item-view"]}`}>
-                                <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} ${classes["bill-item-no"]}`}>
-                                    <span>{indx+1}</span>
-                                </div>
-                                <div className={`${flexclasses["col-3"]} ${classes["bill-item-title"]} align-items-start`}>
-                                    <span>{item.itemDescription}</span>
-                                </div>
-                                <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} align-items-start`}>
-                                    <span>{item.hsnSac}</span>
-                                </div>
-                                <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} align-items-start justify-content-end`}>
-                                    <span>{item.qty}.00</span>
-                                </div>
-                                <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} align-items-start justify-content-end`}>
-                                    <span>{SetNumCnvrt(ConvertNumberFormat(item.rate))}</span>
-                                </div>
-                                <div className={`${flexclasses["col-2"]} ${classes["bill-item-title"]} p-0 align-items-stretch`}>
-                                    
-                                    <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right b-t-0`}>
-                                        <span>{item.cgstPersent}%</span>    
-                                    </div>
-                                    <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right b-t-0`}>
-                                        <span>{SetNumCnvrt(ConvertNumberFormat(item.cgstAmt))}</span>    
-                                    </div>
-                                    
-                                </div>
-                                <div className={`${flexclasses["col-2"]} ${classes["bill-item-title"]} p-0 align-items-stretch`}>
-                                    
-                                    <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right b-t-0`}>
-                                        <span>{item.sgstPersent}%</span>    
-                                    </div>
-                                    <div className={`${flexclasses["col"]} ${classes["bill-gst-bx"]} text-right b-t-0`}>
-                                        <span>{SetNumCnvrt(ConvertNumberFormat(item.sgstAmt))}</span>    
-                                    </div>
-                                    
-                                </div>
-                                <div className={`${flexclasses["col"]} ${classes["bill-item-title"]} ${classes["bill-item-action"]} align-items-start justify-content-end`}>
-                                    <span>{SetNumCnvrt(ConvertNumberFormat(item.amount))}</span>
-                                    <button className={`${formclasses["btns"]} ${formclasses["btns-secondary"]} ${classes["delete-btn"]}`} onClick={onRemoveItem.bind(null, item.id)} >-</button>
-                                </div>
-                            </div>
-                        })
-                            
-                    }
-
-                    <div  className={`${flexclasses["row"]} `}>
-                        <div className={`${flexclasses["col-8"]} ${classes["bill-text-amout"]}`}>
-                            <h3>Total In Words</h3>
-                            {amtWrd && 
-                                <p>Indian Rupee {amtWrd}</p>
+                                        <table style={{width:"100%", height:"100%", position:"absolute"}}>
+                                            <tbody>
+                                                <tr>
+                                                    <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 1px 0px 0px", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px", width:"100px"}}>
+                                                        {item.cgstPersent}%
+                                                    </td>
+                                                    <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 0px 0px 0px", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
+                                                        {SetNumCnvrt(ConvertNumberFormat(item.cgstAmt))}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"0px 0px 0px", fontSize:"16px", position:"relative"}}>
+                                        
+                                        <table style={{width:"100%", height:"100%", position:"absolute"}}>
+                                            <tbody>
+                                                <tr>
+                                                    <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 1px 0px 0px", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px", width:"100px"}}>
+                                                        {item.sgstPersent}%
+                                                    </td>
+                                                    <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 0px 0px 0px", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
+                                                        {SetNumCnvrt(ConvertNumberFormat(item.sgstAmt))}  
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td className={`${classes["bill-item-action"]}`} style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 40px 8px 15px", fontSize:"16px"}}>
+                                        {SetNumCnvrt(ConvertNumberFormat(item.amount))}
+                                        <button className={`${formclasses["btns"]} ${formclasses["btns-secondary"]} ${classes["delete-btn"]}`} onClick={onRemoveItem.bind(null, item.id)} >-</button>
+                                    </td>
+                                </tr>
+                                })
+                                
                             }
-                            
+                        </tbody>
+                    </table>
+                    
+                    
+                    <Container className={`container-fluid`} >
+                        <div  className={`${flexclasses["row"]} `}>
+                            <div className={`${flexclasses["col-8"]} ${classes["bill-text-amout"]}`}>
+                                <h3>Total In Words</h3>
+                                {amtWrd && 
+                                    <p>Indian Rupee {amtWrd}</p>
+                                }
+                                
+                            </div>
+                            <div className={`${flexclasses["col-4"]} ${classes["bill-math-amout"]}`}>
+                                <div className={`d-flex ${classes["final-amt-list"]}`}>
+                                    <div className={`${flexclasses["col-6"]} text-right`}>
+                                        Sub Total
+                                    </div>
+                                    <div className={`${flexclasses["col-6"]} text-right`}>
+                                        {subtotalAmt}
+                                    </div>
+                                </div>
+                                <div className={`d-flex ${classes["final-amt-list"]}`}>
+                                    <div className={`${flexclasses["col-6"]} text-right`}>
+                                        CGST 
+                                    </div>
+                                    <div className={`${flexclasses["col-6"]} text-right`}>
+                                        {cgstAmt}
+                                    </div>
+                                </div>
+                                <div className={`d-flex ${classes["final-amt-list"]}`}>
+                                    <div className={`${flexclasses["col-6"]} text-right`}>
+                                        SGST
+                                    </div>
+                                    <div className={`${flexclasses["col-6"]} text-right`}>
+                                        {sgstAmt}
+                                        
+                                    </div>
+                                </div>
+                                <div className={`d-flex ${classes["final-amt-list"]} text-bold`}>
+                                    <div className={`${flexclasses["col-6"]} text-right`}>
+                                        Total
+                                    </div>
+                                    <div className={`${flexclasses["col-6"]} text-right`}>
+                                        {totalAmt}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className={`${flexclasses["col-4"]} ${classes["bill-math-amout"]}`}>
-                            <div className={`d-flex ${classes["final-amt-list"]}`}>
-                                <div className={`${flexclasses["col-6"]} text-right`}>
-                                    Sub Total
-                                </div>
-                                <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {subtotalAmt}
-                                </div>
-                            </div>
-                            <div className={`d-flex ${classes["final-amt-list"]}`}>
-                                <div className={`${flexclasses["col-6"]} text-right`}>
-                                    CGST 
-                                </div>
-                                <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {cgstAmt}
-                                </div>
-                            </div>
-                            <div className={`d-flex ${classes["final-amt-list"]}`}>
-                                <div className={`${flexclasses["col-6"]} text-right`}>
-                                    SGST
-                                </div>
-                                <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {sgstAmt}
-                                    
-                                </div>
-                            </div>
-                            <div className={`d-flex ${classes["final-amt-list"]} text-bold`}>
-                                <div className={`${flexclasses["col-6"]} text-right`}>
-                                    Total
-                                </div>
-                                <div className={`${flexclasses["col-6"]} text-right`}>
-                                    {totalAmt}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </Container>
+                    
                     
                     
                 </div>

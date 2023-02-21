@@ -26,7 +26,8 @@
     box-shadow: none;
 }
 textarea.input-controls{
-    height: 60px;
+    
+    min-height: 60px;
     resize: none;
 }
 .invalid-input{

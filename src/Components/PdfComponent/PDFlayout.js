@@ -200,7 +200,7 @@ const PDFlayout = (props)=>{
             fontSize:"18px"
         },
         billtotab:{
-            borderWidth: '0px 1px 1px 1px',
+            borderWidth: '0px 1px 0px 1px',
             borderStyle: 'solid',
             borderColor: '#ccc'
         },
@@ -220,177 +220,6 @@ const PDFlayout = (props)=>{
             paddingLeft:'10px',
             paddingRight:'10px',
             fontSize:'16px'
-        },
-        billitemrow:{
-            display:"flex",
-            backgroundColor:'#f5f5f5',
-            fontWeight:'bold',
-            fontSize:'14px'
-        },
-        billcontentrow:{
-            display:"flex",
-            backgroundColor:'#fff',
-            fontWeight:'normal',
-            fontSize:'14px'
-        },
-        billitemDesc:{
-            borderWidth: '0px 0px 1px 1px',
-            borderStyle: 'solid',
-            borderColor: '#ccc',
-            paddingTop: '8px',
-            paddingBottom: '8px',
-            paddingLeft:'10px',
-            paddingRight:'10px',
-            flex:'1 0 auto',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-end',
-            color: '#000',
-            width:"230px"
-        },
-        billitemtitle:{
-            borderWidth: '0px 0px 1px 1px',
-            borderStyle: 'solid',
-            borderColor: '#ccc',
-            paddingTop: '8px',
-            paddingBottom: '8px',
-            paddingLeft:'10px',
-            paddingRight:'10px',
-            flex:'1 0 auto',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-end',
-            color: '#000'
-        },
-        billitemhsn:{
-            borderWidth: '0px 0px 1px 1px',
-            borderStyle: 'solid',
-            borderColor: '#ccc',
-            paddingTop: '8px',
-            paddingBottom: '8px',
-            paddingLeft:'10px',
-            paddingRight:'10px',
-            flex:'1 0 auto',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-end',
-            color: '#000',
-            width:'120px'
-        },
-        billitemQty:{
-            borderWidth: '0px 0px 1px 1px',
-            borderStyle: 'solid',
-            borderColor: '#ccc',
-            paddingTop: '8px',
-            paddingBottom: '8px',
-            paddingLeft:'10px',
-            paddingRight:'10px',
-            flex:'1 0 auto',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'flex-end',
-            alignItems: 'flex-end',
-            color: '#000',
-            width:'60px'
-        },
-        billitemrate:{
-            borderWidth: '0px 0px 1px 1px',
-            borderStyle: 'solid',
-            borderColor: '#ccc',
-            paddingTop: '8px',
-            paddingBottom: '8px',
-            paddingLeft:'10px',
-            paddingRight:'10px',
-            flex:'1 0 auto',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'flex-end',
-            alignItems: 'flex-end',
-            color: '#000',
-            width:'120px'
-        },
-        billitemviewspan:{
-            fontWeight:'normal'
-        },
-        billitemtitlecgst:{
-            borderWidth: '0px 0px 1px 1px',
-            borderStyle: 'solid',
-            borderColor: '#ccc',
-            paddingTop: '0px',
-            paddingBottom: '0px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-end',
-            color: '#000',
-            width:'16.66%'
-        },
-        billitemtitlesgst:{
-            
-            borderWidth: '0px 1px 1px 1px',
-            borderStyle: 'solid',
-            borderColor: '#ccc',
-            paddingTop: '0px',
-            paddingBottom: '0px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-end',
-            color: '#000',
-            width:'16.66%'
-        },
-        billitemno:{
-            flex: '0 0 auto',
-            width: '38px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'flex-end',
-            padding: '0 10px 8px',
-            borderWidth:'0 0 1px 1px',
-            borderStyle:'solid',
-            borderColor:'#ccc'        
-        
-        },
-        billgsttitle:{
-            width:"100%",
-            paddingLeft: '10px',
-            paddingRight: '10px',
-            paddingBottom: '10px',
-            paddingTop:'8px',
-            textAlign:'center'
-        },
-        billgstbxlt:{
-            flex:'1 0 0%',
-            padding: '8px 15px',
-            borderTop: 'solid 1px #ccc',
-            textAlign:"right"
-        },
-        billgstbxrt:{
-            flex:'1 0 0%',
-            padding: '8px 15px',
-            borderTop: 'solid 1px #ccc',
-            borderLeft:'solid 1px #ccc',
-            textAlign:"right",
-        },
-        billgstcntlt:{
-            flex:'1 0 0%',
-            padding: '8px 15px',
-            borderTop: 'solid 0px #ccc',
-            textAlign:"right"
-        },
-        billgstcntrt:{
-            flex:'1 0 0%',
-            padding: '8px 15px',
-            borderTop: 'solid 0px #ccc',
-            borderLeft:'solid 1px #ccc',
-            textAlign:"right",
-        },
-        billgstbxlastelm:{
-            padding: '8px 15px',
-            borderLeft:'solid 1px #ccc'
         },
         invoiceFooter:{
             display:'flex',
@@ -543,85 +372,107 @@ const PDFlayout = (props)=>{
             </div>
 
             <div style={setStyles.billitemtab}>
-                
-                <div style={setStyles.billitemrow}>
-                    <div style={setStyles.billitemno}>
-                        <span>#</span>
-                    </div>
-                    <div style={setStyles.billitemDesc}>
-                        <span>Item & Description</span>
-                    </div>
-                    <div style={setStyles.billitemhsn}>
-                        <span>HSN/SAC</span>
-                    </div>
-                    <div style={setStyles.billitemQty}>
-                        <span>Qty</span>
-                    </div>
-                    <div style={setStyles.billitemrate}>
-                        <span>Rate</span>
-                    </div>
-                    <div style={setStyles.billitemtitlecgst}>
-                        <div style={setStyles.billgsttitle}>CGST</div>  
-                        <div style={setStyles.billgstbxlt}>
-                            <span>%</span>    
-                        </div>
-                        <div style={setStyles.billgstbxrt}>
-                            <span>Amt</span>    
-                        </div>
-                    </div>
-                    <div style={setStyles.billitemtitlesgst}>
-                        <div style={setStyles.billgsttitle}>SGST</div>  
-                        <div style={setStyles.billgstbxlt}>
-                            <span>%</span>    
-                        </div>
-                        <div style={setStyles.billgstbxrt}>
-                            <span>Amt</span>    
-                        </div>
-                    </div>
-                    <div style={setStyles.billitemamt}>
-                        <span>Amount</span>
-                    </div>
-                </div>
-                {getTextInvoice.invoiceitems.map((item, indx) =>{
+                <table style={{width:"100%", borderCollapse:"collapse"}}>
+                    <tbody>
+                        <tr style={{backgroundColor:"rgb(241 242 244)"}}>
+                            <th style={{textAlign:"left",borderWidth:"1px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px"}}>#</th>
+                            <th style={{textAlign:"left",borderWidth:"1px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px"}}>Item & Description</th>
+                            <th style={{textAlign:"left",borderWidth:"1px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px"}}>HSN/SAC</th>
+                            <th style={{textAlign:"right",borderWidth:"1px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px"}}>Qty</th>
+                            <th style={{textAlign:"right",borderWidth:"1px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px"}}>Rate</th>
+                            <th style={{textAlign:"left",borderWidth:"1px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"bottom", padding:"10px 0px 0px", fontSize:"16px"}}>
+                                <table style={{width:"100%"}}>
+                                    <tbody>
+                                        <tr>
+                                            <th style={{textAlign:"center", padding:"0 0 10px 0"}}>CGST</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table style={{width:"100%"}}>
+                                    <tbody>
+                                        <tr>
+                                            <th style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"1px 1px 0px 0px", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px", width:"100px"}}>%</th>
+                                            <th style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"1px 0px 0px 0px", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px"}}>Amt</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </th>
+                            <th style={{textAlign:"left",borderWidth:"1px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"bottom", padding:"10px 0px 0px", fontSize:"16px"}}>
+                                <table style={{width:"100%"}}>
+                                    <tbody>
+                                        <tr>
+                                            <th style={{textAlign:"center", padding:"0 0 10px 0"}}>SGST</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table style={{width:"100%"}}>
+                                    <tbody>
+                                        <tr>
+                                            <th style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"1px 1px 0px 0px", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px", width:"100px"}}>%</th>
+                                            <th style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"1px 0px 0px 0px", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px"}}>Amt</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </th>
+                            <th style={{textAlign:"right",borderWidth:"1px 1px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"bottom", padding:"10px 10px 8px", fontSize:"16px"}}>Amount</th>
+                        </tr>
                     
-                    return <div key={item.id} style={setStyles.billcontentrow}>
-                                <div style={setStyles.billitemno}>
-                                    <span>{indx+1}</span>
-                                </div>
-                                <div style={setStyles.billitemDesc}>
-                                    <span>{item.itemDescription}</span>
-                                </div>
-                                <div style={setStyles.billitemhsn}>
-                                    <span>{item.hsnSac}</span>
-                                </div>
-                                <div style={setStyles.billitemQty}>
-                                    <span>{item.qty}.00</span>
-                                </div>
-                                <div style={setStyles.billitemrate}>
-                                    <span>{SetNumCnvrt(ConvertNumberFormat(item.rate))}</span>
-                                </div>
-                                <div style={setStyles.billitemtitlecgst}> 
-                                    <div style={setStyles.billgstcntlt}>
-                                        <span>{item.cgstPersent}%</span>    
-                                    </div>
-                                    <div style={setStyles.billgstcntrt}>
-                                        <span>{SetNumCnvrt(ConvertNumberFormat(item.cgstAmt))}</span>    
-                                    </div>
-                                </div>
-                                <div style={setStyles.billitemtitlesgst}>  
-                                    <div style={setStyles.billgstcntlt}>
-                                        <span>{item.sgstPersent}%</span>    
-                                    </div>
-                                    <div style={setStyles.billgstcntrt}>
-                                        <span>{SetNumCnvrt(ConvertNumberFormat(item.sgstAmt))}</span>    
-                                    </div>
-                                </div>
-                                <div style={setStyles.billitemamt}>
-                                    <span>{SetNumCnvrt(ConvertNumberFormat(item.amount))}</span>
-                                </div>
-                            </div>
-                    })
-                }
+                        {getTextInvoice.invoiceitems.map((item, indx) =>{
+                                
+                                return <tr key={item.id}>
+                                <td style={{textAlign:"left",borderWidth:"0px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px"}}>{indx+1}</td>
+                                <td style={{textAlign:"left",borderWidth:"0px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px", width:"320px", lineHeight: "22px"}}>
+                                    {item.itemDescription}
+                                </td>
+                                <td style={{textAlign:"left",borderWidth:"0px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px"}}>
+                                    {item.hsnSac}
+                                </td>
+                                <td style={{textAlign:"right",borderWidth:"0px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px", width:"100px"}}>
+                                    {item.qty}.00
+                                </td>
+                                <td style={{textAlign:"right",borderWidth:"0px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px"}}>
+                                    {SetNumCnvrt(ConvertNumberFormat(item.rate))}
+                                </td>
+                                <td style={{textAlign:"left",borderWidth:"0px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"top", padding:"0px 0px 0px", fontSize:"16px", width:"182px", position:"relative"}}>
+
+                                    <table style={{width:"100%", height:"100%", position:"absolute"}}>
+                                        <tbody>
+                                            <tr>
+                                                <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 1px 0px 0px", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px", width:"100px"}}>
+                                                    {item.cgstPersent}%
+                                                </td>
+                                                <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 0px 0px 0px", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px"}}>
+                                                    {SetNumCnvrt(ConvertNumberFormat(item.cgstAmt))}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style={{textAlign:"left",borderWidth:"0px 0px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"top", padding:"0px 0px 0px", fontSize:"16px", width:"182px", position:"relative"}}>
+                                    
+                                    <table style={{width:"100%", height:"100%", position:"absolute"}}>
+                                        <tbody>
+                                            <tr>
+                                                <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 1px 0px 0px", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px", width:"100px"}}>
+                                                    {item.sgstPersent}%
+                                                </td>
+                                                <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 0px 0px 0px", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px"}}>
+                                                    {SetNumCnvrt(ConvertNumberFormat(item.sgstAmt))}  
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td style={{textAlign:"right",borderWidth:"0px 1px 1px 1px", borderStyle:"solid", borderColor:"#ccc", verticalAlign:"top", padding:"10px 10px 8px", fontSize:"16px"}}>
+                                    {SetNumCnvrt(ConvertNumberFormat(item.amount))}
+                                    
+                                </td>
+                            </tr>
+                            })
+                            
+                        }
+                    </tbody>
+                </table> 
                 
             </div>
 

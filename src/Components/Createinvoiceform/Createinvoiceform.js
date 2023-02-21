@@ -131,52 +131,59 @@ const Createinvoiceform = (props)=>{
     }
 
     return(
-        <form className={`${flexclasses["row"]} ${invoiceClasses["bill-item-row"]}`} onSubmit={onSubmitInoiceForm}>
-            <div className={`${flexclasses["col"]} ${invoiceClasses["bill-item-title"]} ${invoiceClasses["bill-item-no"]} align-items-stretch`}>
-                <span>0</span>
-            </div>
-            <div className={`${flexclasses["col-3"]} ${invoiceClasses["bill-item-title"]} align-items-stretch`}>
-                <textarea className={`${classes["input-controls"]} ${isdecription === false ? classes["invalid-input"] : ''}`} name="DESCRIPT" 
-                value={descriptionInput.value} onChange={onInputHandler} onBlur={ontouchHandler} ></textarea>
-            </div>
-            <div className={`${flexclasses["col"]} ${invoiceClasses["bill-item-title"]} align-items-stretch`}>
+        <tr>
+            <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>0</td>
+            <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px", width:"360px"}}>
+                <textarea className={`${classes["input-controls"]} ${isdecription === false ? classes["invalid-input"] : ''}`} name="DESCRIPT" value={descriptionInput.value} onChange={onInputHandler} onBlur={ontouchHandler} ></textarea>
+            </td>
+            <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
                 <input type="number" className={`${classes["input-controls"]} ${ishsnInput === false ? classes["invalid-input"] : ''}`} name="HSNSAC" value={hsnInput.value} onChange={onInputHandler} onBlur={ontouchHandler} />
-            </div>
-            <div className={`${flexclasses["col"]} ${invoiceClasses["bill-item-title"]} align-items-stretch`}>
+            </td>
+            <td style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px", width:"100px"}}>
                 <input type="number" min="1" className={`${classes["input-controls"]} ${isQty === false ? classes["invalid-input"] : ''}`} name="QTY" value={qtyInput.value} onChange={onInputHandler} onBlur={ontouchHandler} />
-            </div>
-            <div className={`${flexclasses["col"]} ${invoiceClasses["bill-item-title"]} align-items-stretch`}>
+            </td>
+            <td style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
                 <input type="number" className={`${classes["input-controls"]} ${israteInput === false ? classes["invalid-input"] : ''}`} name="RATE" value={rateInput.value} onChange={onInputHandler} onBlur={ontouchHandler} />
-            </div>
-            <div className={`${flexclasses["col-2"]} ${invoiceClasses["bill-item-title"]} p-0 align-items-stretch`}>
-            
-                <div className={`${flexclasses["col"]} ${invoiceClasses["bill-gst-bx"]} text-right b-t-0`}>
-                    <input type="number" className={`${classes["input-controls"]} ${iscgstInput === false ? classes["invalid-input"] : ''}`} name="CGSTPERSNT" value={cgstInput.value} min= "1" max="100" onChange={onInputHandler} onBlur={ontouchHandler} />    
-                </div>
-                <div className={`${flexclasses["col"]} ${invoiceClasses["bill-gst-bx"]} text-right b-t-0`}>
-                    <input type="text" ref={cgstAmtRef} className={classes["input-controls"]}  disabled />  
-                </div>
+            </td>
+            <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"0px 0px 0px", fontSize:"16px", position:"relative", width:"260px"}}>
+
+                <table style={{width:"100%", height:"100%", position:"absolute"}}>
+                    <tbody>
+                        <tr>
+                            <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 1px 0px 0px", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px", width:"100px"}}>
+                                <input type="number" className={`${classes["input-controls"]} ${iscgstInput === false ? classes["invalid-input"] : ''}`} name="CGSTPERSNT" value={cgstInput.value} min= "1" max="100" onChange={onInputHandler} onBlur={ontouchHandler} /> 
+                            </td>
+                            <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 0px 0px 0px", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
+                                <input type="text" ref={cgstAmtRef} className={classes["input-controls"]}  disabled />  
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td style={{textAlign:"left",border:"solid 1px #ccc", verticalAlign:"top", padding:"0px 0px 0px", fontSize:"16px", position:"relative", width:"260px"}}>
                 
-            </div>
-            <div className={`${flexclasses["col-2"]} ${invoiceClasses["bill-item-title"]} p-0 align-items-stretch`}>
-                    
-                <div className={`${flexclasses["col"]} ${invoiceClasses["bill-gst-bx"]} text-right b-t-0`}>
-                    <input type="number" className={`${classes["input-controls"]} ${issgstInput === false ? classes["invalid-input"] : ''}`} name="SGSTPERSNT" value={sgstInput.value} min= "1" max="100" onChange={onInputHandler} onBlur={ontouchHandler} />
-                </div>
-                <div className={`${flexclasses["col"]} ${invoiceClasses["bill-gst-bx"]} text-right b-t-0`}>
-                    <input type="text" ref={sgstAmtRef} className={classes["input-controls"]} disabled />   
-                </div>
-                
-            </div>
-            <div className={`${flexclasses["col"]} ${invoiceClasses["bill-item-title"]} ${invoiceClasses["bill-item-amt"]} align-items-stretch`}>
-                
+                <table style={{width:"100%", height:"100%", position:"absolute"}}>
+                    <tbody>
+                        <tr>
+                            <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 1px 0px 0px", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px", width:"100px"}}>
+                                <input type="number" className={`${classes["input-controls"]} ${issgstInput === false ? classes["invalid-input"] : ''}`} name="SGSTPERSNT" value={sgstInput.value} min= "1" max="100" onChange={onInputHandler} onBlur={ontouchHandler} />
+                            </td>
+                            <td style={{textAlign:"right",borderStyle:"solid", borderColor:"#ccc",borderWidth:"0px 0px 0px 0px", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
+                                <input type="text" ref={sgstAmtRef} className={classes["input-controls"]} disabled />  
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
                 <input type="text" ref={addAmountRef} className={classes["input-controls"]} disabled />
                 <div className={`${invoiceClasses["action-btns"]} d-flex`}>
-                    <button type="submit" className={`${classes["btns"]}`} disabled={!formIsValid} >Add</button>
+                    <button type="submit" className={`${classes["btns"]}`} disabled={!formIsValid} onClick={onSubmitInoiceForm}>Add</button>
                     {/* <button className={`${classes["btns"]} ${classes["btns-secondary"]}`}>Hide</button> */}
                 </div>
-            </div>
-        </form>
+            </td>
+        </tr>
+            
     )
 }
 

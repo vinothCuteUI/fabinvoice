@@ -44,7 +44,7 @@ table{
 
 
 .bill-to-tab{
-    border-width: 0px 1px 1px 1px;
+    border-width: 0px 1px 0px 1px;
     border-style: solid;
     border-color: #ccc;
 }
@@ -109,15 +109,14 @@ table{
     max-width: 200px;
     flex: 0 0 auto;
 }
-.bill-item-view .bill-item-action{
+.bill-item-action{
     padding-right: 40px;
-    overflow: hidden;
-    max-width: 200px;
-    flex: 0 0 auto;
+    position: relative;
 }
-.bill-item-view .bill-item-action .delete-btn{
+.bill-item-action .delete-btn{
     position: absolute;
     top: 0;
+    bottom:0;
     right: 0;
     border-radius: 0;
     padding: 10px;

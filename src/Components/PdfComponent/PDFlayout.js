@@ -491,7 +491,7 @@ const PDFlayout = (props)=>{
                     <p style={setStyles.hTitle}>
                         Fabevy software services private limited
                     </p>
-                    <p style={{lineHight:"22px"}}>
+                    <p style={{lineHeight:"22px", fontSize:"16px"}}>
                         Tirunelveli Tamil Nadu 627806<br/>
                         India<br/>
                         GSTIN: 33AAFCF1382A1Z8

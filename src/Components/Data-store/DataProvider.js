@@ -85,9 +85,16 @@ const DataProvider = (props) => {
 
     }
 
+
     const onAddItemBill = (item)=>{
         dispatchItemAction({type:"ADDITEM", item: item});
         setInvoiceBill(item);
+    }
+
+    const removeAllItems = ()=>{
+      dispatchItemInvoiceAction({type:""});
+      dispatchItemAction({type:""});
+      setInvoiceBill({});
     }
 
     
@@ -101,7 +108,8 @@ const DataProvider = (props) => {
         totalAmt:iteminvoiceState.totalAmt,
         onAddInvoice: onAddInvoiceData,
         onRemoveItem:removeItem,
-        onItemBill:onAddItemBill
+        onItemBill:onAddItemBill,
+        onRemoveAll: removeAllItems
     }
     
     return <Createtextinvoce.Provider value={invoiceCartContext}>{props.children}</Createtextinvoce.Provider>

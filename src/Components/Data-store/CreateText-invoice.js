@@ -10,7 +10,8 @@ const Createtextinvoce = createContext(
         totalAmt:0,
         onAddInvoice: ()=>{},
         onRemoveItem: ()=>{},
-        onItemBill: () => {}
+        onItemBill: () => {},
+        onRemoveAll: ()=>{}
     }
 );
 

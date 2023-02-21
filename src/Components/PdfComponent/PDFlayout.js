@@ -491,10 +491,10 @@ const PDFlayout = (props)=>{
                     <p style={setStyles.hTitle}>
                         Fabevy software services private limited
                     </p>
-                    <p>
+                    <p style={{lineHight:"22px"}}>
                         Tirunelveli Tamil Nadu 627806<br/>
                         India<br/>
-                        GSTIN: 33AADCF7286K1ZA
+                        GSTIN: 33AAFCF1382A1Z8
                     </p>
                 </div>
                 <div style={setStyles.col12}>

@@ -98,7 +98,7 @@ const Invoicelayout = (props)=>{
         }else{
             if(formIsValid){
                 const getItems = {
-                    estId: "EST"+inputEST.value,
+                    estId: inputEST.value,
                     estDate: esDateInput.value,
                     billto: billToInput.value
                 }
@@ -114,7 +114,12 @@ const Invoicelayout = (props)=>{
     const onRemoveItem = id => {
         setInvoiceContext.onRemoveItem(id);
     }
-   
+    const onNewInvoice = ()=>{
+        setInvoiceContext.onRemoveAll();
+        dispatchInputESTInput({type:""})
+        dispatchEsDateInput({type:""})
+        dispatchBillToInput({type:""})
+    }
     const onCancelPdf = ()=>{
         setIsGenerate(false)
     }
@@ -130,8 +135,8 @@ const Invoicelayout = (props)=>{
                                 <span>#</span>
                             </div>
                             <div className={`${flexclasses["col-md-6"]} ${classes.estGroup}` }>
-                                <span>EST</span>
-                                <input type="number" name="ESTID" className={formclasses["input-controls"]} placeholder="Ex: 00014" 
+
+                                <input type="text" name="ESTID" className={formclasses["input-controls"]} placeholder="Ex: 00014" 
                                 value={inputEST.value} onChange={onInputHandler} onBlur={ontouchHandler} />
                             </div>
                         </div>
@@ -307,7 +312,11 @@ const Invoicelayout = (props)=>{
                 <div className={classes.invoiceBtn}>
                 
                     <button className={formclasses.btns} disabled={!formIsValid} onClick={onGenerate}>Generate PDF</button>
+                    {setInvoiceContext.invoiceitems.length > 0 && <button className={formclasses.btns} style={{marginLeft:"10px", backgroundColor:"#670099", borderColor:"#670099"}} 
+                        onClick={onNewInvoice}>New Invoice</button>}
+                    
                     {!formIsValid && <p style={{marginTop:'20px', padding:'15px 10px', color: '#664d03',backgroundColor: '#fff3cd', borderColor: '#ffecb5'}}>(Invoice No, EST Date and Bill to) Should not be empty.!</p>}
+                            
                 </div>
             </div>
             {isGenerate &&

@@ -4,6 +4,11 @@
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
 }
+:root{
+  --primary-btns:#670099;
+  --secondary-btns:#000;
+}
+
 body {
   margin: 0;
   
@@ -16,6 +21,24 @@ code {
     monospace;
 }
 
+
+.btn-primary{
+  background-color: var(--primary-btns) !important;
+  border-color: var(--primary-btns) !important;
+}
+.btn-secondary{
+  background-color: var(--secondary-btns) !important;
+  border-color: var(--secondary-btns) !important;
+}
+
+.bg-primary{
+  background-color: var(--primary-btns) !important;
+  /* color: #fff !important; */
+}
+.bg-secondary{
+  background-color: var(--secondary-btns) !important;
+  /* color: #fff !important; */
+}
 /* ======= Container fluid ======= */
 .container-fluid{
   width: 100% !important;

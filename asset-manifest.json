@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fabinvoice/static/css/main.5d2e27b1.css",
+    "main.css": "/fabinvoice/static/css/main.b6c97c7e.css",
     "main.js": "/fabinvoice/static/js/main.ba52734f.js",
     "static/js/498.da229744.chunk.js": "/fabinvoice/static/js/498.da229744.chunk.js",
     "static/js/703.aec6759c.chunk.js": "/fabinvoice/static/js/703.aec6759c.chunk.js",
@@ -10,7 +10,7 @@
     "static/media/fabevy-logo-landscape.png": "/fabinvoice/static/media/fabevy-logo-landscape.b8c7c0b68b62e0c9c23b.png",
     "static/media/rupee-symbol.png": "/fabinvoice/static/media/rupee-symbol.d94e382acf04a33c031c.png",
     "index.html": "/fabinvoice/index.html",
-    "main.5d2e27b1.css.map": "/fabinvoice/static/css/main.5d2e27b1.css.map",
+    "main.b6c97c7e.css.map": "/fabinvoice/static/css/main.b6c97c7e.css.map",
     "main.ba52734f.js.map": "/fabinvoice/static/js/main.ba52734f.js.map",
     "498.da229744.chunk.js.map": "/fabinvoice/static/js/498.da229744.chunk.js.map",
     "703.aec6759c.chunk.js.map": "/fabinvoice/static/js/703.aec6759c.chunk.js.map",
@@ -18,7 +18,7 @@
     "787.71c8cd4b.chunk.js.map": "/fabinvoice/static/js/787.71c8cd4b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d2e27b1.css",
+    "static/css/main.b6c97c7e.css",
     "static/js/main.ba52734f.js"
   ]
 }

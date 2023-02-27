@@ -61,3 +61,15 @@ textarea.input-controls{
     background-color: red;
     border-color: red;
 }
+.action-btns{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.action-btns button{
+    display: block;
+    height: 100%;
+    padding: 10px 12px;
+    border-radius: 0px;
+}

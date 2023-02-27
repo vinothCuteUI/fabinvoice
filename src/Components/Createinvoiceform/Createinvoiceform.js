@@ -175,10 +175,10 @@ const Createinvoiceform = (props)=>{
                     </tbody>
                 </table>
             </td>
-            <td style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 15px 8px", fontSize:"16px"}}>
+            <td style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 40px 8px 15px", fontSize:"16px", position:"relative"}}>
                 <input type="text" ref={addAmountRef} className={classes["input-controls"]} disabled />
-                <div className={`${invoiceClasses["action-btns"]} d-flex`}>
-                    <button type="submit" className={`${classes["btns"]}`} disabled={!formIsValid} onClick={onSubmitInoiceForm}>Add</button>
+                <div className={`${classes["action-btns"]}`}>
+                    <button type="submit" className={`${classes["btns"]}`} disabled={!formIsValid} onClick={onSubmitInoiceForm}>+</button>
                     {/* <button className={`${classes["btns"]} ${classes["btns-secondary"]}`}>Hide</button> */}
                 </div>
             </td>

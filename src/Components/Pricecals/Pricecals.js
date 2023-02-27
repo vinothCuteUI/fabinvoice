@@ -48,10 +48,10 @@ const Pricecals = (props)=>{
 
     return(
         <div className={`${classes["price-cals"]} ${classes[showCals]}`} id={'price-cals'}>
-            <div className={classes.gstcals} onClick={onCalsShow}>
+            <div className={`${classes.gstcals} bg-primary`} onClick={onCalsShow}>
                {calsTxt}
             </div>
-            <div className={classes.title}>
+            <div className={`${classes.title} bg-primary`}>
                 GST Calculations
             </div>
             <form>

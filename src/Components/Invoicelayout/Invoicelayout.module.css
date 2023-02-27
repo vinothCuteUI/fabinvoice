@@ -119,7 +119,8 @@ table{
     bottom:0;
     right: 0;
     border-radius: 0;
-    padding: 10px;
+    padding: 10px 14px;
+    font-weight: bold;
 }
 .bill-text-amout h3{
     padding-top: 20px;
@@ -139,7 +140,7 @@ table{
     padding-bottom: 30px;
 }
 .invoiceBtn > button{
-    background-color: #000;
+    /* background-color: #000; */
     font-size: 20px;
     padding: 10px 30px;
 }

@@ -269,7 +269,7 @@ const Invoicelayout = (props)=>{
                                     </td>
                                     <td className={`${classes["bill-item-action"]}`} style={{textAlign:"right",border:"solid 1px #ccc", verticalAlign:"top", padding:"10px 40px 8px 15px", fontSize:"16px"}}>
                                         {SetNumCnvrt(ConvertNumberFormat(item.amount))}
-                                        <button className={`${formclasses["btns"]} ${formclasses["btns-secondary"]} ${classes["delete-btn"]}`} onClick={onRemoveItem.bind(null, item.id)} >-</button>
+                                        <button className={`${formclasses["btns"]} btn-secondary ${classes["delete-btn"]}`} onClick={onRemoveItem.bind(null, item.id)} >-</button>
                                     </td>
                                 </tr>
                                 })
@@ -331,8 +331,8 @@ const Invoicelayout = (props)=>{
                 </div>
                 <div className={classes.invoiceBtn}>
                 
-                    <button className={formclasses.btns} disabled={!formIsValid} onClick={onGenerate}>Generate PDF</button>
-                    {setInvoiceContext.invoiceitems.length > 0 && <button className={formclasses.btns} style={{marginLeft:"10px", backgroundColor:"#670099", borderColor:"#670099"}} 
+                    <button className={`${formclasses.btns} btn-primary`} disabled={!formIsValid} onClick={onGenerate}>Generate PDF</button>
+                    {setInvoiceContext.invoiceitems.length > 0 && <button className={`${formclasses.btns} btn-secondary`} style={{marginLeft:"10px"}} 
                         onClick={onNewInvoice}>New Invoice</button>}
                     
                     {!formIsValid && <p style={{marginTop:'20px', padding:'15px 10px', color: '#664d03',backgroundColor: '#fff3cd', borderColor: '#ffecb5'}}>(Invoice No, EST Date and Bill to) Should not be empty.!</p>}
